@@ -39,6 +39,8 @@ function App() {
         >
           Learn React
         </a>
+
+        William Hayden Taylor
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
