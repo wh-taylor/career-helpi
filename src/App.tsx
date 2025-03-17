@@ -41,7 +41,6 @@ function App() {
         </a>
 
         William Hayden Taylor
-        Abby Fowler
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
