@@ -40,8 +40,8 @@ function App() {
           Learn React
         </a>
 
-        William Hayden Taylor
-        Abby Fowler
+        <span>William Hayden Taylor</span>
+        <span>Abby Fowler</span>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
