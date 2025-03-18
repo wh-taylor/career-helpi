@@ -42,6 +42,7 @@ function App() {
 
         <span>William Hayden Taylor</span>
         <span>Abby Fowler</span>
+        <span>Jonathan Carney</span>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
