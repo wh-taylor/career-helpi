@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import HomePage from './HomePage';
-import BasicQuiz from './BasicQuiz';
+import HomePage from './pages/Home/HomePage';
+import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
+import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -46,6 +47,7 @@ function App() {
       </header>
       {page === "HomePage" && <HomePage setPage={setPage}/>}
       {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
+      {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage}/>}
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>

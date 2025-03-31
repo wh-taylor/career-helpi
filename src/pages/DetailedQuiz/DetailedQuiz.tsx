@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import './DetailedQuiz.css';
 
-
-interface BasicQuizProps {
+interface DetailedQuizProps {
     setPage: (newPage: string) => void
 }
+
 const questions = ["What is your preferred situation?", "1", "2"];
 
-export function BasicQuiz({setPage}: BasicQuizProps) {
+export function DetailedQuiz({setPage}: DetailedQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [question, setQuestion] = useState<string>(questions[index]);
     return (
         <div className="">
-            <h1 className="">Basic Quiz</h1>
-            <p>The basic career assessment asks simple multiple choice questions in order to get an idea for the skills and preferences 
+            <h1 className="">Detailed Quiz</h1>
+            <p>The detailed career assessment asks simple multiple choice questions in order to get an idea for the skills and preferences 
                 of the taker. 
             </p>
             <div className="d-flex justify-content-between">
@@ -47,4 +48,4 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
     )
 }
 
-export default BasicQuiz;
+export default DetailedQuiz;
