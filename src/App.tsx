@@ -32,14 +32,20 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
-        {page === "HomePage" && <HomePage setPage={setPage}/>}
-        {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
-
-        <span>William Hayden Taylor</span>
-        <span>Abby Fowler</span>
-        <span> Jonathan Carney </span>
+        <div>
+          The Career Helpi
+        </div>
+        <div className="LoginButtons">
+          <div>
+            <Button>Sign Up</Button>
+          </div>
+          <div>
+            <Button>Login</Button>
+          </div>
+        </div>
       </header>
+      {page === "HomePage" && <HomePage setPage={setPage}/>}
+      {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
