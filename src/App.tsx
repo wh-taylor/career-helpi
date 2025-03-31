@@ -4,6 +4,7 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import HomePage from './HomePage';
 import BasicQuiz from './BasicQuiz';
+import DetailedQuiz from './DetailedQuiz';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -35,6 +36,7 @@ function App() {
         
         {page === "HomePage" && <HomePage setPage={setPage}/>}
         {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
+        {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage}/>}
 
         <span>William Hayden Taylor</span>
         <span>Abby Fowler</span>
