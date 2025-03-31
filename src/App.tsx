@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import HomePage from './HomePage';
-import BasicQuiz from './BasicQuiz';
-import DetailedQuiz from './DetailedQuiz';
+import HomePage from './pages/Home/HomePage';
+import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
+import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
