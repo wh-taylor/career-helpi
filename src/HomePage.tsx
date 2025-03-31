@@ -9,9 +9,15 @@ export function HomePage({setPage}: HomePageProps) {
         <Container>
             <Row>
                 <Col>
+                    <div>
+                        This is the description for the Basic Quiz.
+                    </div>
                     <Button onClick={() => setPage("BasicQuiz")}>Basic Quiz</Button>
                 </Col>
                 <Col>
+                    <div>
+                        This is the description for the Detailed Quiz.
+                    </div>
                     <Button onClick={() => setPage("DetailedQuiz")}>Detailed Quiz</Button>
                 </Col>
             </Row>
