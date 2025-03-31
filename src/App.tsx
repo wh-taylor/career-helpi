@@ -34,6 +34,7 @@ function App() {
       <header className="App-header">
         
         {page === "HomePage" && <HomePage setPage={setPage}/>}
+        {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
 
         <span>William Hayden Taylor</span>
         <span>Abby Fowler</span>
