@@ -13,14 +13,14 @@ export function HomePage({setPage}: HomePageProps) {
                 <div className="quiz-description">
                     This is the description for the Basic Quiz.
                 </div>
-                <Button className="quiz-button" onClick={() => setPage("BasicQuiz")}>Basic Quiz</Button>
+                <Button className="quiz-button" onClick={() => setPage("BasicQuiz")}><span>Basic Quiz</span></Button>
             </div>
             <div className='quiz-box'>
                 <div className="quiz-title">Detailed Quiz</div>
                 <div className="quiz-description">
                     This is the description for the Detailed Quiz.
                 </div>
-                <Button className="quiz-button" onClick={() => setPage("DetailedQuiz")}>Detailed Quiz</Button>
+                <Button className="quiz-button" onClick={() => setPage("DetailedQuiz")}><span>Detailed Quiz</span></Button>
             </div>
         </div>
     )
