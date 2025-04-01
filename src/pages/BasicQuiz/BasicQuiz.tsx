@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "react-bootstrap";
 import './BasicQuiz.css';
 
@@ -40,7 +40,7 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
             </div>
 
             <div className="progressbar">
-                <progress value={index / questions.length} />
+                <progress value={index / questions.length} className="customprogress"/>
             </div>
 
         </div>
