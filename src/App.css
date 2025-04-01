@@ -1,5 +1,6 @@
 .App {
   min-height: 100vh;
+  font-family: "Helvetica";
 }
 
 .App-logo {
@@ -16,11 +17,11 @@
 .MainWrapper{
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .MainContent{
   flex: 1;
+  min-height: 95vh;
 }
 
 .App-header {
@@ -33,6 +34,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   position: relative;
+  font-weight: 600;
 }
 
 .HeaderContent{
@@ -49,7 +51,7 @@
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  font-size: 45px;
+  font-size: 60px;
 }
 
 .LoginButtons {
@@ -78,6 +80,7 @@
 .footer{
   background-color: #282c34;
   color:white;
+  height: 5vh;
 }
 
 .api-form-container{
