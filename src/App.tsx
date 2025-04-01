@@ -32,28 +32,35 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-        <div>
-          The Career Helpi
+      <div className="MainWrapper">
+        <div className="MainContent">
+          <header className="App-header">
+            <div className="HeaderContent">
+              <div className="HeaderTitle">
+                The Career Helpi
+              </div>
+              <div className="LoginButtons">
+                <Button>Sign Up</Button>
+                <Button>Login</Button>
+              </div>
+            </div>
+          </header>
+          {page === "HomePage" && <HomePage setPage={setPage}/>}
+          {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
+          {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage}/>}
         </div>
-        <div className="LoginButtons">
-          <div>
-            <Button>Sign Up</Button>
-          </div>
-          <div>
-            <Button>Login</Button>
-          </div>
-        </div>
-      </header>
-      {page === "HomePage" && <HomePage setPage={setPage}/>}
-      {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
-      {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage}/>}
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
+        <footer className="footer">
+          <p>Icon will go here</p>
+        </footer>
+      </div>
+      <div className="api-form-container">
+        <Form className="api-form">
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+      </div>
     </div>
   );
 }

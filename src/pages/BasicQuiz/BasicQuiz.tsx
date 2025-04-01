@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import './BasicQuiz.css';
 
@@ -10,41 +10,33 @@ const questions = ["What is your preferred situation?", "1", "2"];
 
 export function BasicQuiz({setPage}: BasicQuizProps) {
     const [index, setIndex] = useState<number>(0);
-    const [question, setQuestion] = useState<string>(questions[index]);
     return (
-        <div className="basicquizpage">
+        <div className="main-container">
+            <div className="return-button-box">
+                <Button className="return-button" onClick={()=> setPage("HomePage")}>Return</Button>
+            </div>
             <h1 className="header">Basic Quiz</h1>
             <p className="quizdescription">The basic career assessment asks simple multiple choice questions in order to get an idea for the skills and preferences 
                 of the taker. 
             </p>
             <div className="topbuttons">
-                <Button 
-                className="btn btn-secondary"
-                onClick={()=> 
-                {
+                <Button className="btn btn-secondary" onClick={()=> {
                     if (index !== 0) {
                         setIndex(index - 1);
                     }
-                    setQuestion(questions[index]);
-
                 }}>
                     Back
                 </Button>
-                <Button 
-                onClick={()=> 
-                {
+                <Button onClick={()=> {
                     if (index !== 2) {
                         setIndex(index + 1);
-                        console.log(index);
                     }
-                    setQuestion(questions[index]);
-
                 }}>
-                    Next
+                    {index === questions.length -1 ? "Submit" : "Next"}
                 </Button>
             </div>
             <div className="content">
-                <p>{question}</p>
+                <p>{questions[index]}</p>
             </div>
 
             <div className="progressbar">
