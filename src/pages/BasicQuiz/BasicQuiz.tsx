@@ -12,12 +12,12 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [question, setQuestion] = useState<string>(questions[index]);
     return (
-        <div className="">
-            <h1 className="">Basic Quiz</h1>
-            <p>The basic career assessment asks simple multiple choice questions in order to get an idea for the skills and preferences 
+        <div className="basicquizpage">
+            <h1 className="header">Basic Quiz</h1>
+            <p className="quizdescription">The basic career assessment asks simple multiple choice questions in order to get an idea for the skills and preferences 
                 of the taker. 
             </p>
-            <div className="d-flex justify-content-between">
+            <div className="topbuttons">
                 <Button 
                 className="btn btn-secondary"
                 onClick={()=> 
@@ -35,6 +35,7 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                 {
                     if (index !== 2) {
                         setIndex(index + 1);
+                        console.log(index);
                     }
                     setQuestion(questions[index]);
 
@@ -42,7 +43,13 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                     Next
                 </Button>
             </div>
-            <p>{question}</p>
+            <div className="content">
+                <p>{question}</p>
+            </div>
+
+            <div className="progressbar">
+                <progress value={index / questions.length} />
+            </div>
 
         </div>
     )
