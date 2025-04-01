@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -11,6 +11,16 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.MainWrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.MainContent{
+  flex: 1;
 }
 
 .App-header {
@@ -39,6 +49,7 @@
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+  font-size: 45px;
 }
 
 .LoginButtons {
@@ -58,4 +69,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.footer{
+  background-color: #282c34;
+  color:white;
+}
+
+.api-form-container{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.api-form{
+  text-align: center;
+  width: 80%;
 }
