@@ -15,21 +15,40 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
+}
+
+.HeaderContent{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.HeaderTitle{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.LoginButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-.LoginButtons {
-  float: right;
 }
 
 @keyframes App-logo-spin {

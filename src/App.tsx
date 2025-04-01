@@ -33,14 +33,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>
-          The Career Helpi
-        </div>
-        <div className="LoginButtons">
-          <div>
-            <Button>Sign Up</Button>
+        <div className="HeaderContent">
+          <div className="HeaderTitle">
+            The Career Helpi
           </div>
-          <div>
+          <div className="LoginButtons">
+            <Button>Sign Up</Button>
             <Button>Login</Button>
           </div>
         </div>
