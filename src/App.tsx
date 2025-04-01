@@ -30,12 +30,18 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
   return (
     <div className="App">
       <div className="MainWrapper">
         <div className="MainContent">
           <header className="App-header">
             <div className="HeaderContent">
+              <div>
+                {page !== "HomePage" && (
+                <Button className="return-button" onClick={()=> setPage("HomePage")}>Home</Button>
+                )}
+              </div>
               <div className="HeaderTitle">
                 The Career Helpi
               </div>
