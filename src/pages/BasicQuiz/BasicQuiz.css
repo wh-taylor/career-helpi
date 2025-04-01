@@ -1,7 +1,54 @@
 .main-container{
     padding:40px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .return-button-box{
     text-align: left;
 }
+
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 2px;
+}
+
+.quizdescription {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+}
+
+
+.topbuttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.topbuttons Button {
+    height: 40px;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+}
+
+.progressbar {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
