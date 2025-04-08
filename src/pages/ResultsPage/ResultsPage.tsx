@@ -1,40 +1,36 @@
-import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { CareerCard } from "./CareerCard";
 import './ResultsPage.css';
 
 interface ResultsPageProps {
     setPage: (newPage: string) => void
 }
 
+interface Card {
+    title: string,
+    desc: string,
+    reason: string,
+}
+
 export function ResultsPage({setPage}: ResultsPageProps) {
-    const [index, setIndex] = useState<number>(0);
+    let cards: Card[] = [
+        {title: "Job 1", desc: "Desc", reason: "Reason"},
+        {title: "Job 2", desc: "Desc", reason: "Reason"},
+        {title: "Job 3", desc: "Desc", reason: "Reason"},
+        {title: "Job 4", desc: "Desc", reason: "Reason"},
+        {title: "Job 5", desc: "Desc", reason: "Reason"},
+    ];
+
     return (
         <div className="main-container">
+            <h1 className="resultsHeader">Here are our top career choices for you:</h1>
+            <hr/>
             <div className="careerCards">
-                <div className="career">
-                    <div className="jobTitle">
-                        Job Title
-                    </div>
-                    <div className="jobDesc">
-                        This is a brief description for the given career.
-                    </div>
-                    <hr/>
-                    <div className="jobReason">
-                        Here is my opinion on why I think this is a good fit for you.
-                    </div>
-                </div>
-                <div className="career">
-                    <div className="jobTitle">
-                        Job Title
-                    </div>
-                    <div className="jobDesc">
-                        This is a brief description for the given career.
-                    </div>
-                    <hr/>
-                    <div className="jobReason">
-                        Here is my opinion on why I think this is a good fit for you.
-                    </div>
-                </div>
+                {cards.map(({title, desc, reason}) =>
+                    <CareerCard
+                        title={title}
+                        desc={desc}
+                        reason={reason}/>
+                )}
             </div>
         </div>
     )

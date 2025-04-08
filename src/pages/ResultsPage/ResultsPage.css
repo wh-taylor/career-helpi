@@ -37,9 +37,15 @@
     margin: 0 auto;
 }
 
+.resultsHeader {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .careerCards {
     display: table-row;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border-spacing: 20px;
 }
 
