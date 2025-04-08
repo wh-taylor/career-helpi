@@ -39,6 +39,8 @@
 
 .careerCards {
     display: table-row;
+    margin: auto;
+    border-spacing: 20px;
 }
 
 .career {
