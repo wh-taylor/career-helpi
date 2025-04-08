@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Form, ProgressBar } from 'react-bootstrap';
+import { Button, Form} from 'react-bootstrap';
 import HomePage from './pages/Home/HomePage';
 import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
@@ -37,14 +37,13 @@ function App() {
         <div className="MainContent">
           <header className="App-header">
             <div className="HeaderContent">
-              <div>
+              <div className="moon-container">
                 {page !== "HomePage" && (
-                <Button className="return-button" onClick={()=> setPage("HomePage")}>Home</Button>
-                )}
+                  <Button className="overlay-button" onClick={() => setPage("HomePage")}>
+                     Home
+                   </Button>)}
               </div>
-              <div className="HeaderTitle">
-                The Career Helpi
-              </div>
+              <div className="HeaderTitle">The Career Cosmos</div>
               <div className="LoginButtons">
                 <Button>Sign Up</Button>
                 <Button>Login</Button>
