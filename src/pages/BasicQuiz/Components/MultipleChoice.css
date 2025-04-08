@@ -1,0 +1,9 @@
+.answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.radioButtons {
+    width: 100px;
+}

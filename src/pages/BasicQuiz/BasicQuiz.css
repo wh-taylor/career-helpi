@@ -50,5 +50,11 @@
     justify-content: center;
 }
 
+.custom-progressbar{
+    width: 80%;
+    height: 20px;
+    margin: 0 auto;
+}
+
 
 

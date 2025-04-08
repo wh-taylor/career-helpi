@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, ProgressBar } from "react-bootstrap";
 import './BasicQuiz.css';
+import MultipleChoice from "./Components/MultipleChoice";
+import Slider from "./Components/Slider";
 
 
 interface BasicQuizProps {
@@ -34,10 +36,12 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
             </div>
             <div className="content">
                 <p>{questions[index]}</p>
+                {/*<MultipleChoice />*/}
+                <Slider />
             </div>
 
             <div className="progressbar">
-                <progress value={index / questions.length} className="customprogress"/>
+                <ProgressBar now={((index+1) / questions.length)*100} className="custom-progressbar" variant="success"/>
             </div>
 
         </div>
