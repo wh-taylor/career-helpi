@@ -5,6 +5,7 @@ import { Button, Form, ProgressBar } from 'react-bootstrap';
 import HomePage from './pages/Home/HomePage';
 import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
+import ResultsPage from './pages/ResultsPage/ResultsPage';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -54,6 +55,7 @@ function App() {
           {page === "HomePage" && <HomePage setPage={setPage}/>}
           {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
           {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage}/>}
+          {page === "ResultsPage" && <ResultsPage setPage={setPage}/>}
         </div>
         <footer className="footer">
           <p>Icon will go here</p>
