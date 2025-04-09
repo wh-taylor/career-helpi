@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Button, Form} from 'react-bootstrap';
 import HomePage from './pages/Home/HomePage';
@@ -55,6 +54,7 @@ function App() {
           {page === "HomePage" && <HomePage setPage={setPage}/>}
           {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
           {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage}/>}
+          {page === "ResultsPage" && <ResultsPage setPage={setPage}/>}
         </div>
         <footer className="footer">
           <p>Icon will go here</p>

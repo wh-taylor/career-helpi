@@ -24,6 +24,8 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
                 <Button onClick={()=> {
                     if (index < questions.length) {
                         setIndex(index + 1);
+                    } else {
+                        setPage("ResultsPage");
                     }
                 }}>
                     {index === questions.length -1 ? "Submit" : "Next"}
