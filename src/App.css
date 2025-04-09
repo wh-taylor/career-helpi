@@ -2,8 +2,9 @@
   min-height: 100vh;
   font-family: "Helvetica";
   background-image: url('stars.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -72,7 +73,6 @@
   gap: 0.5rem;
 }
 
-
 .App-link {
   color: #61dafb;
 }
@@ -87,8 +87,7 @@
 }
 
 .footer{
-  background-color: #282c34;
-  color:white;
+  background-color: black;
   height: 5vh;
 }
 

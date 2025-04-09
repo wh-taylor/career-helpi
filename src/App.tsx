@@ -4,6 +4,7 @@ import { Button, Form} from 'react-bootstrap';
 import HomePage from './pages/Home/HomePage';
 import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
+import ResultsPage from './pages/ResultsPage/ResultsPage';
 import moonImg from './moon.jpg';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)

@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 80vh;
+    border: none;
 }
 
 .quiz-box{
@@ -26,6 +27,7 @@
 }
 
 .quiz-title{
+    display: flex;
     font-size: 40px;
     padding-bottom: 10px;
     text-align: left;
@@ -42,7 +44,7 @@
 }
 
 .homeImgBtn{
-  width:100px;
+  width: 100px;
   height: 100px;
 }
 
