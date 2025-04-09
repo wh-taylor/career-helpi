@@ -5,6 +5,7 @@ import { Button, Form} from 'react-bootstrap';
 import HomePage from './pages/Home/HomePage';
 import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
+import moonImg from './moon.jpg';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -39,9 +40,10 @@ function App() {
             <div className="HeaderContent">
               <div className="moon-container">
                 {page !== "HomePage" && (
-                  <Button className="overlay-button" onClick={() => setPage("HomePage")}>
-                     Home
-                   </Button>)}
+                  <img className="homeImgBtn" src = {moonImg} onClick={() => setPage("HomePage")} alt="Home Page"/>)}
+                  {/* // <Button className="overlay-button" onClick={() => setPage("HomePage")}>
+                  //    Home
+                  //  </Button>)} */}
               </div>
               <div className="HeaderTitle">The Career Cosmos</div>
               <div className="LoginButtons">

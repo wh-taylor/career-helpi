@@ -41,6 +41,11 @@
     height: 60px;
 }
 
+.homeImgBtn{
+  width:100px;
+  height: 100px;
+}
+
 .quiz-button span {
     cursor: pointer;
     display: inline-block;
