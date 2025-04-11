@@ -45,10 +45,6 @@ function App() {
               <div className="HeaderTitle">
                 The Career Helpi
               </div>
-              <div className="LoginButtons">
-                <Button>Sign Up</Button>
-                <Button>Login</Button>
-              </div>
             </div>
           </header>
           {page === "HomePage" && <HomePage setPage={setPage}/>}
