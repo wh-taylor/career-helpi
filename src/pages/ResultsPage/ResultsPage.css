@@ -1,0 +1,67 @@
+.main-container{
+    margin: 40px;
+    max-height: 70vh;
+}
+.return-button-box{
+    text-align: left;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 2px;
+}
+
+.topbuttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.topbuttons Button {
+    height: 40px;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+}
+
+.custom-progressbar{
+    width: 80%;
+    height: 20px;
+    margin: 0 auto;
+}
+
+.resultsHeader {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.careerCards {
+    display: table-row;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 20px;
+}
+
+.career {
+    display: table-cell;
+    border: 2px solid rgb(40, 40, 40);
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px;
+}
+
+.jobTitle {
+    font-size: larger;
+}
+
+.jobDesc {
+    font-size: small;
+    color: rgb(63, 63, 63);
+}
