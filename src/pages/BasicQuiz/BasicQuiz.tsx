@@ -57,7 +57,7 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
             </div>
 
             <div className="progressbar">
-                <ProgressBar now={((index+1) / basicQuestions.length)*100} className="custom-progressbar" variant="success"/>
+                <ProgressBar now={((index) / basicQuestions.length)*100} className="custom-progressbar" variant="success"/>
             </div>
 
         </div>
