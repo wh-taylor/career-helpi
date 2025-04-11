@@ -1,5 +1,5 @@
 .main-container{
-    padding:40px;
+    padding:10px;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -48,6 +48,12 @@
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.custom-progressbar{
+    width: 80%;
+    height: 20px;
+    margin: 0 auto;
 }
 
 
