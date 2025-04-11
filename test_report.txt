@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (42 ms)
+  ✕ renders learn react link (44 ms)
 
   ● renders learn react link
 
@@ -30,6 +30,11 @@ FAIL src/App.test.tsx
                   [36m<div[39m
                     [33mclass[39m=[32m"moon-container"[39m
                   [36m/>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"HeaderTitle"[39m
+                  [36m>[39m
+                    [0mThe Career Cosmos[0m
+                  [36m</div>[39m
                 [36m</div>[39m
               [36m</header>[39m
               [36m<div[39m
@@ -157,7 +162,7 @@ All files               |   22.22 |    23.33 |   11.11 |   22.22 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.878 s
+Time:        2.894 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
