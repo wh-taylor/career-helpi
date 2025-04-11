@@ -28,14 +28,14 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
                         setPage("ResultsPage");
                     }
                 }}>
-                    {index === questions.length -1 ? "Submit" : "Next"}
+                    {index === questions.length ? "Submit" : "Next"}
                 </Button>
             </div>
             <div className="content">
-                <p>{questions[index]}</p>
+                <p>{questions[index] || "Click Submit if you are happy with your answers."}</p>
             </div>
             <div>
-                <ProgressBar now={((index+1) / questions.length)*100} className="custom-progressbar" variant="success"/>
+                <ProgressBar now={(index / questions.length)*100} className="custom-progressbar" variant="success"/>
             </div>
         </div>
     )
