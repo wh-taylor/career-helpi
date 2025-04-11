@@ -2,7 +2,12 @@ import { Form } from 'react-bootstrap';
 import './MultipleChoice.css';
 import { useState } from 'react';
 
-export function MultipleChoice() {
+interface MultipleChoiceProps {
+    index: number;
+    options: string[];
+}
+
+export function MultipleChoice({index, options}: MultipleChoiceProps) {
     const [answer, setAnswer] = useState<string>("");
     function changeAnswer(event: React.ChangeEvent<HTMLInputElement>) {
         setAnswer(event.target.value);
@@ -13,8 +18,8 @@ export function MultipleChoice() {
         type = "radio"
         name = "answers"
         onChange = {changeAnswer}
-        label = "True"
-        value = "True"
+        label = {options[0]}
+        value = {options[0]}
         checked = {answer === "True"}
         className="radioButtons"
         />

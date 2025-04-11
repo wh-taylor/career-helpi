@@ -19,9 +19,9 @@
 }
 
 input[type=range]::-webkit-slider-thumb {
-    background-color: #e77d11; /* Bootstrap primary color */
+    background-color: #e77d11; 
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    cursor: pointer; /* Add a pointer cursor */
+    cursor: pointer; 
 }

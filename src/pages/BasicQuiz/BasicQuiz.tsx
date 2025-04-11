@@ -8,7 +8,23 @@ import Slider from "./Components/Slider";
 interface BasicQuizProps {
     setPage: (newPage: string) => void
 }
-const questions = ["What is your preferred situation?", "1", "2"];
+
+type QuestionType = "MultipleChoice" | "Slider";
+
+interface Question {
+    id: number;
+    name: string;
+    body: string;
+    options: string[];
+    type: QuestionType;
+}
+
+const basicQuestions: Question[] = [
+    {id: 1, name: "Question 1", body: "What is your preferred situation?", options: ["", ""], type: "MultipleChoice"},
+    {id: 2, name: "Question 2", body: "Rate how you feel working on this:", options: ["", ""], type: "Slider"},
+    {id: 3, name: "Question 3", body: "You like working in a team", options: ["True", "False"], type: "MultipleChoice"}
+];
+
 
 export function BasicQuiz({setPage}: BasicQuizProps) {
     const [index, setIndex] = useState<number>(0);
@@ -31,17 +47,17 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                         setIndex(index + 1);
                     }
                 }}>
-                    {index === questions.length -1 ? "Submit" : "Next"}
+                    {index === basicQuestions.length -1 ? "Submit" : "Next"}
                 </Button>
             </div>
             <div className="content">
-                <p>{questions[index]}</p>
-                {/*<MultipleChoice />*/}
-                <Slider />
+                <p>{basicQuestions[index].body}</p>
+                {basicQuestions[index].type === "MultipleChoice" && <MultipleChoice index= {index} options={{...basicQuestions[index].options}}/>}
+                {basicQuestions[index].type === "Slider" && <Slider/>}
             </div>
 
             <div className="progressbar">
-                <ProgressBar now={((index+1) / questions.length)*100} className="custom-progressbar" variant="success"/>
+                <ProgressBar now={((index+1) / basicQuestions.length)*100} className="custom-progressbar" variant="success"/>
             </div>
 
         </div>
