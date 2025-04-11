@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 80vh;
+    border: none;
 }
 
 .quiz-box{
@@ -16,6 +17,7 @@
     margin: 3.5%;
     width: 40%;
     height: 80%;
+    color: white;
 }
 
 .quiz-description{
@@ -25,10 +27,12 @@
 }
 
 .quiz-title{
+    display: flex;
     font-size: 40px;
     padding-bottom: 10px;
     text-align: left;
     font-weight: 500;
+    color: white;
 }
 
 .quiz-button{
@@ -37,6 +41,11 @@
     font-size: 25px;
     width: 250px;
     height: 60px;
+}
+
+.homeImgBtn{
+  width: 100px;
+  height: 100px;
 }
 
 .quiz-button span {
