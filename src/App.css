@@ -4,6 +4,7 @@
   background-image: url('stars.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
 }
 .App-logo {
   height: 40vmin;
