@@ -72,6 +72,30 @@
   text-align: center;
 }
 
+.home-button {
+  background-color: whitesmoke;
+  color: black;
+  position: relative;
+  padding-left: 2.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.earth-icon {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+
 .App-link {
   color: #61dafb;
 }

@@ -1,5 +1,7 @@
 import { Button, } from "react-bootstrap";
 import './HomePage.css';
+import planet1Img from '../../planet1.png';
+import planet2Img from '../../planet2.png';
 
 interface HomePageProps {
     setPage: (newPage: string) => void
@@ -10,6 +12,7 @@ export function HomePage({setPage}: HomePageProps) {
         <div className="quiz-container">
             <div className='quiz-box'>
                 <div className="quiz-title">Basic Quiz</div>
+                <img src={planet1Img} alt="red-planet" className="planet"/>
                 <div className="quiz-description">
                     This is the description for the Basic Quiz.
                 </div>
@@ -17,6 +20,7 @@ export function HomePage({setPage}: HomePageProps) {
             </div>
             <div className='quiz-box'>
                 <div className="quiz-title">Detailed Quiz</div>
+                <img src={planet2Img} alt="blue-planet" className="planet"/>
                 <div className="quiz-description">
                     This is the description for the Detailed Quiz.
                 </div>

@@ -29,7 +29,6 @@
 .quiz-title{
     display: flex;
     font-size: 40px;
-    padding-bottom: 10px;
     text-align: left;
     font-weight: 500;
     color: white;
@@ -71,4 +70,11 @@
 .quiz-button:hover span:after {
     opacity: 1;
     right: 0;
+  }
+
+  .planet {
+    width: 200px;   /* Try 150px or 100px if still too big */
+    height: 200px;  /* Keep it square for circular shape */
+    object-fit: cover;
+    border-radius: 50%;
   }
