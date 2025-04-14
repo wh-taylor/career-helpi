@@ -3,13 +3,15 @@ import { Button, ProgressBar } from "react-bootstrap";
 import './BasicQuiz.css';
 import MultipleChoice from "./Components/MultipleChoice";
 import Slider from "./Components/Slider";
+import Dropdown from "./Components/Dropdown";
+import rocketImg from './rocket.png';
 
 
 interface BasicQuizProps {
     setPage: (newPage: string) => void
 }
 
-type QuestionType = "MultipleChoice" | "Slider";
+type QuestionType = "MultipleChoice" | "Slider" | "Dropdown";
 
 interface Question {
     id: number;
@@ -20,9 +22,9 @@ interface Question {
 }
 
 const basicQuestions: Question[] = [
-    {id: 1, name: "Question 1", body: "What is your preferred situation?", options: ["", ""], type: "MultipleChoice"},
+    {id: 1, name: "Question 1", body: "What is your preferred situation?", options: ["True", "False"], type: "MultipleChoice"},
     {id: 2, name: "Question 2", body: "Rate how you feel working on this:", options: ["", ""], type: "Slider"},
-    {id: 3, name: "Question 3", body: "You like working in a team", options: ["True", "False"], type: "MultipleChoice"}
+    {id: 3, name: "Question 3", body: "You like working in a team", options: ["True", "False"], type: "Dropdown"}
 ];
 
 
@@ -54,10 +56,11 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                 <p>{basicQuestions[index].body}</p>
                 {basicQuestions[index].type === "MultipleChoice" && <MultipleChoice index= {index} options={{...basicQuestions[index].options}}/>}
                 {basicQuestions[index].type === "Slider" && <Slider/>}
+                {basicQuestions[index].type === "Dropdown" && <Dropdown/>}
             </div>
 
-            <div className="progressbar">
-                <ProgressBar now={((index) / basicQuestions.length)*100} className="custom-progressbar" variant="success"/>
+            <div className="progressbarcontainer">
+                <ProgressBar now={((index) / basicQuestions.length)*100} className="custom-progressbar" variant="danger" label={<img className="progress-label"src={rocketImg} alt=""/>}/>
             </div>
 
         </div>

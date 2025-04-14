@@ -27,8 +27,8 @@ export function MultipleChoice({index, options}: MultipleChoiceProps) {
         type = "radio"
         name = "answers"
         onChange = {changeAnswer}
-        label = "False"
-        value = "False"
+        label = {options[1]}
+        value = {options[1]}
         checked = {answer === "False"}
         className="radioButtons"
         />
