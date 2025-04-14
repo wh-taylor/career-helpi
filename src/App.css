@@ -32,51 +32,44 @@
 .App-header {
   background-color: black;
   background-size: cover;
-  background-repeat: center top;
+  background-repeat: no-repeat;
   min-height: 15vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
-  position: relative;
   font-weight: 600;
+  position: relative;
 }
 
-.HeaderContent{
+.HeaderContent {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  position: relative;
 }
 
-.moon-container {
-  background-image: url("moon.jpg");
-  width: 100px;
-  height: 100px;
+.HeaderSide {
+  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.HeaderTitle{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  font-size: 60px;
-  font-family: 'Orbitron', sans-serif;
-  color: white;
-  /* text-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff; */
+.HeaderCenter {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.LoginButtons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.HeaderTitle {
+  font-size: clamp(20px, 6vw, 60px);
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .App-link {
