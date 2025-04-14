@@ -5,7 +5,6 @@ import HomePage from './pages/Home/HomePage';
 import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
 import ResultsPage from './pages/ResultsPage/ResultsPage';
-import moonImg from './moon.jpg';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -36,34 +35,43 @@ function App() {
     <div className="App">
       <div className="MainWrapper">
         <div className="MainContent">
-          <header className="App-header">
-            <div className="HeaderContent">
+        <header className="App-header">
+          <div className="HeaderContent">
+            <div className="HeaderSide left">
               <div className="moon-container">
                 {page !== "HomePage" && (
-                  <img className="homeImgBtn" src = {moonImg} onClick={() => setPage("HomePage")} alt="Home Page"/>)}
-                  {/* // <Button className="overlay-button" onClick={() => setPage("HomePage")}>
-                  //    Home
-                  //  </Button>)} */}
+                  <Button className="overlay-button" onClick={() => setPage("HomePage")}>
+                    Home
+                  </Button>
+                )}
               </div>
+            </div>
+
+            <div className="HeaderCenter">
               <div className="HeaderTitle">The Career Cosmos</div>
             </div>
-          </header>
+
+            <div className="HeaderSide right">{/* Optional right-side content */}</div>
+          </div>
+        </header>
           {page === "HomePage" && <HomePage setPage={setPage}/>}
           {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
           {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage}/>}
           {page === "ResultsPage" && <ResultsPage setPage={setPage}/>}
         </div>
         <footer className="footer">
-          <p>Icon will go here</p>
+          <p>Scroll below to insert API key</p>
         </footer>
       </div>
       <div className="api-form-container">
-        <Form className="api-form">
-          <Form.Label>API Key:</Form.Label>
-          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-          <br></br>
-          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-        </Form>
+        {page === "HomePage" &&
+          (<Form className="api-form">
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <br></br>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>)
+        }
       </div>
     </div>
   );
