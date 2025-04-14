@@ -57,12 +57,14 @@ function App() {
         </footer>
       </div>
       <div className="api-form-container">
-        <Form className="api-form">
-          <Form.Label>API Key:</Form.Label>
-          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-          <br></br>
-          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-        </Form>
+        {page === "HomePage" &&
+          (<Form className="api-form">
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <br></br>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>)
+        }
       </div>
     </div>
   );
