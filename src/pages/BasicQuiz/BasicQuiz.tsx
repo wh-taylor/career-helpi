@@ -4,7 +4,7 @@ import './BasicQuiz.css';
 import MultipleChoice from "./Components/MultipleChoice";
 import Slider from "./Components/Slider";
 import Dropdown from "./Components/Dropdown";
-import rocketImg from './rocket.png';
+import rocketImg from '../rocket.png';
 
 
 interface BasicQuizProps {

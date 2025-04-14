@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, ProgressBar } from "react-bootstrap";
 import './DetailedQuiz.css';
+import rocketImg from '../rocket.png';
 
 interface DetailedQuizProps {
     setPage: (newPage: string) => void
@@ -34,8 +35,8 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
             <div className="content">
                 <p>{questions[index] || "Click Submit if you are happy with your answers."}</p>
             </div>
-            <div>
-                <ProgressBar now={(index / questions.length)*100} className="custom-progressbar" variant="success"/>
+            <div className="progressbarcontainer">
+                <ProgressBar now={((index) / questions.length)*100} className="custom-progressbar" variant="danger" label={<img className="progress-label"src={rocketImg} alt=""/>}/>
             </div>
         </div>
     )
