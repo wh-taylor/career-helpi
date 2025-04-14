@@ -40,10 +40,9 @@ function App() {
             <div className="HeaderContent">
               <div className="moon-container">
                 {page !== "HomePage" && (
-                  <img className="homeImgBtn" src = {moonImg} onClick={() => setPage("HomePage")} alt="Home Page"/>)}
-                  {/* // <Button className="overlay-button" onClick={() => setPage("HomePage")}>
-                  //    Home
-                  //  </Button>)} */}
+                  <Button className="overlay-button" onClick={() => setPage("HomePage")}>
+                     Home
+                   </Button>)}
               </div>
               <div className="HeaderTitle">The Career Cosmos</div>
             </div>
@@ -54,16 +53,18 @@ function App() {
           {page === "ResultsPage" && <ResultsPage setPage={setPage}/>}
         </div>
         <footer className="footer">
-          <p>Icon will go here</p>
+          <p>Scroll below to insert API key</p>
         </footer>
       </div>
       <div className="api-form-container">
-        <Form className="api-form">
-          <Form.Label>API Key:</Form.Label>
-          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-          <br></br>
-          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-        </Form>
+        {page === "HomePage" &&
+          (<Form className="api-form">
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <br></br>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>)
+        }
       </div>
     </div>
   );

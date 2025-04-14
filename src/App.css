@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 .App {
   min-height: 100vh;
   font-family: "Helvetica";
   background-image: url('stars.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
 }
 .App-logo {
   height: 40vmin;
@@ -65,6 +68,9 @@
   transform: translateX(-50%);
   white-space: nowrap;
   font-size: 60px;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  /* text-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff; */
 }
 
 .LoginButtons {
@@ -89,6 +95,7 @@
 .footer{
   background-color: black;
   height: 5vh;
+  color: white;
 }
 
 .api-form-container{
