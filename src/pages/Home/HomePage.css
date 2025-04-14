@@ -1,10 +1,32 @@
-.quiz-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    border: none;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+}
+
+.quizzes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .quiz-box{
@@ -13,10 +35,9 @@
     justify-content: space-between;
     border:2px solid;
     border-radius: 10px;
-    padding: 24px;
     margin: 3.5%;
     width: 40%;
-    height: 80%;
+    height: 90%;
     color: white;
 }
 

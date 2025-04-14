@@ -39,7 +39,7 @@ function App() {
         <header className="App-header">
           <div className="HeaderContent">
             <div className="HeaderSide left">
-              <div className="moon-container">
+              <div className="home-container">
                 {page !== "HomePage" && (
                   <Button className="home-button" onClick={() => setPage("HomePage")}>
                     <img src={earthImg} alt="Earth" className="earth-icon"/>
