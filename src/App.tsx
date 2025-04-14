@@ -62,7 +62,9 @@ function App() {
           {page === "ResultsPage" && <ResultsPage setPage={setPage}/>}
         </div>
         <footer className="footer">
-          <p>Scroll below to insert API key</p>
+          {page === "HomePage" &&
+            (<p>Scroll below to insert API key</p>)
+          }
         </footer>
       </div>
       <div className="api-form-container">
