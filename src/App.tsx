@@ -5,6 +5,7 @@ import HomePage from './pages/Home/HomePage';
 import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
 import ResultsPage from './pages/ResultsPage/ResultsPage';
+import earthImg from './earth.png';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -38,9 +39,10 @@ function App() {
         <header className="App-header">
           <div className="HeaderContent">
             <div className="HeaderSide left">
-              <div className="moon-container">
+              <div className="home-container">
                 {page !== "HomePage" && (
-                  <Button className="overlay-button" onClick={() => setPage("HomePage")}>
+                  <Button className="home-button" onClick={() => setPage("HomePage")}>
+                    <img src={earthImg} alt="Earth" className="earth-icon"/>
                     Home
                   </Button>
                 )}
@@ -60,7 +62,9 @@ function App() {
           {page === "ResultsPage" && <ResultsPage setPage={setPage}/>}
         </div>
         <footer className="footer">
-          <p>Scroll below to insert API key</p>
+          {page === "HomePage" &&
+            (<p>Scroll below to insert API key</p>)
+          }
         </footer>
       </div>
       <div className="api-form-container">
