@@ -16,27 +16,26 @@ export function HomePage({setPage}: HomePageProps) {
                 </div>
 
                 <div className="quizzes">
-                <div className="quiz-box">
-                    <div className="quiz-title">Basic Quiz</div>
-                    <img src={planet1Img} alt="red-planet" className="planet" />
-                    <div className="quiz-description">
-                    This is the description for the Basic Quiz.
+                    <div className="quiz-box">
+                        <div className="quiz-title">Basic Quiz</div>
+                        <img src={planet1Img} alt="red-planet" className="planet" />
+                        <div className="quiz-description">
+                        This is the description for the Basic Quiz.
+                        </div>
+                        <Button className="quiz-button" onClick={() => setPage("BasicQuiz")}>
+                        <span>Basic Quiz</span>
+                        </Button>
                     </div>
-                    <Button className="quiz-button" onClick={() => setPage("BasicQuiz")}>
-                    <span>Basic Quiz</span>
-                    </Button>
-                </div>
-
-                <div className="quiz-box">
-                    <div className="quiz-title">Detailed Quiz</div>
-                    <img src={planet2Img} alt="blue-planet" className="planet" />
-                    <div className="quiz-description">
-                    This is the description for the Detailed Quiz.
+                    <div className="quiz-box">
+                        <div className="quiz-title">Detailed Quiz</div>
+                        <img src={planet2Img} alt="blue-planet" className="planet" />
+                        <div className="quiz-description">
+                        This is the description for the Detailed Quiz.
+                        </div>
+                        <Button className="quiz-button" onClick={() => setPage("DetailedQuiz")}>
+                        <span>Detailed Quiz</span>
+                        </Button>
                     </div>
-                    <Button className="quiz-button" onClick={() => setPage("DetailedQuiz")}>
-                    <span>Detailed Quiz</span>
-                    </Button>
-                </div>
                 </div>
             </div>
         </div>
