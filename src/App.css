@@ -72,6 +72,10 @@
   color: white;
   white-space: nowrap;
   text-align: center;
+  text-shadow:
+    0 0 8px rgba(177, 99, 255, 0.6),
+    0 0 16px rgba(177, 99, 255, 0.4),
+    0 0 24px rgba(177, 99, 255, 0.3);
 }
 
 .home-button {

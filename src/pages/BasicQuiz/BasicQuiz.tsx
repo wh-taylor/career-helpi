@@ -44,6 +44,8 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                 <Button onClick={()=> {
                     if (index !== 2) {
                         setIndex(index + 1);
+                    } else{
+                        setPage("ResultsPage")
                     }
                 }}>
                     {index === basicQuestions.length -1 ? "Submit" : "Next"}
