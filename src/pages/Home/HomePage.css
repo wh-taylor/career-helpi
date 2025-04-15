@@ -39,10 +39,10 @@
     align-items: center;
     margin: 3.5%;
     width: 40%;
-    height: 100%;
-    border-color: white;
+    height: 90%;
+    /*border-color: white;
     border-radius: 10px;
-    border: 2px solid;
+    border: 2px solid;*/
 }
 
 .quiz-description{
@@ -98,9 +98,7 @@
   }
 
   .planet {
-    width: 300px;   
-    height: 300px;  
-    object-fit: cover;
-    border-radius: 50%;
+    width: 250px;   
+    height: 250px;  
     position: center;
   }

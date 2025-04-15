@@ -20,17 +20,17 @@ export function HomePage({setPage}: HomePageProps) {
                         <div className="quiz-description">
                         This is the description for the Basic Quiz.
                         </div>
+                        <img src={planet1Img} alt="red-planet" className="planet" />
                         <Button className="quiz-button" onClick={() => setPage("BasicQuiz")}>
                         <span>Basic Quiz</span>
                         </Button>
-                        <img src={planet1Img} alt="red-planet" className="planet" />
                     </div>
                     <div className="quiz-box">
                         <div className="quiz-title">Detailed Quiz</div>
-                        <img src={planet2Img} alt="blue-planet" className="planet" />
                         <div className="quiz-description">
                         This is the description for the Detailed Quiz.
                         </div>
+                        <img src={planet2Img} alt="blue-planet" className="planet" />
                         <Button className="quiz-button" onClick={() => setPage("DetailedQuiz")}>
                         <span>Detailed Quiz</span>
                         </Button>
