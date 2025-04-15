@@ -61,7 +61,9 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
                 </Button>
             </div>
             <div className="content">
-                <p>{question.body}</p>
+                <div className="question">
+                    <p>{question.body}</p>
+                </div>
             </div>
             <div>
                 <textarea className='text-input' placeholder="Begin typing here..." value={textInput} onChange={handleInput} />
