@@ -46,6 +46,21 @@
     color: white;
 }
 
+.content .question {
+    background-color: #000;
+    /* margin: 0px 50px; */
+    margin: 0px auto;
+    width: 80%;
+    padding: 10px 0px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #fff;
+}
+
+.content .question p {
+    margin: 0px;
+}
+
 .progressbarcontainer {
     margin-top: auto;
     width: 100%;
