@@ -27,7 +27,7 @@ const detailedQuestions: Question[] = [
 export function DetailedQuiz({setPage}: DetailedQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [submitted, setSubmitted] = useState<boolean>(false);
-    const [textInput, setInputValue] = useState<string>('Begin typing here...');
+    const [textInput, setInputValue] = useState<string>('');
 
     const handleNext = () => {
         if (index < detailedQuestions.length - 1) {
@@ -64,7 +64,7 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
                 <p>{question.body}</p>
             </div>
             <div>
-                <textarea className='text-input' value={textInput} onChange={handleInput} />
+                <textarea className='text-input' placeholder="Begin typing here..." value={textInput} onChange={handleInput} />
             </div>
             <div className="progressbarcontainer">
                 <ProgressBar now={progress} className="custom-progressbar" variant="danger" label={<img className="progress-label"src={rocketImg} alt=""/>}/>
