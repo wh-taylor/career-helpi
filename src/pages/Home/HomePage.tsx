@@ -14,17 +14,16 @@ export function HomePage({setPage}: HomePageProps) {
                 <div className="tagline">
                 Explore the stars of possibility with The Career Cosmos...
                 </div>
-
                 <div className="quizzes">
                     <div className="quiz-box">
                         <div className="quiz-title">Basic Quiz</div>
-                        <img src={planet1Img} alt="red-planet" className="planet" />
                         <div className="quiz-description">
                         This is the description for the Basic Quiz.
                         </div>
                         <Button className="quiz-button" onClick={() => setPage("BasicQuiz")}>
                         <span>Basic Quiz</span>
                         </Button>
+                        <img src={planet1Img} alt="red-planet" className="planet" />
                     </div>
                     <div className="quiz-box">
                         <div className="quiz-title">Detailed Quiz</div>
