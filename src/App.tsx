@@ -32,6 +32,33 @@ function App() {
     setKey(event.target.value);
   }
 
+  const APIBody = {
+    "model": "gpt-4.1-nano",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write one sentence about a frog."
+      }
+    ],
+    "max_tokens": 10
+  }
+
+  async function callOpenAiAPI() {
+    console.log("Calling the OpenAI API")
+    await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + keyData
+      },
+      body: JSON.stringify(APIBody)
+    }).then((data) => {
+      return data.json();
+    }).then((data) => {
+      console.log(data);
+    });
+  }
+
   return (
     <div className="App">
       <div className="MainWrapper">
@@ -74,6 +101,7 @@ function App() {
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
             <br></br>
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+            <Button className="Submit-Button" onClick={callOpenAiAPI}>API test</Button>
           </Form>)
         }
       </div>
