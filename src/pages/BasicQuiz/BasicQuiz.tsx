@@ -127,9 +127,6 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
     return (
         <div className="main-container">
             <h1 className="header">Basic Quiz</h1>
-            {/* <p className="quizdescription">The basic career assessment asks simple multiple choice questions in order to get an idea for the skills and preferences 
-                of the taker. 
-            </p> */}
             <div className="topbuttons">
                 <Button className="btn btn-secondary" onClick={()=> {
                     if (index !== 0) {
@@ -141,13 +138,17 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                 <Button onClick={()=> {
                     if (index < basicQuestions.length-1) {
                         setIndex(index + 1);
+                    } else{
+                        setPage("ResultsPage")
                     }
                 }}>
                     {index === basicQuestions.length -1 ? "Submit" : "Next"}
                 </Button>
             </div>
             <div className="content">
-                <p>{basicQuestions[index].body}</p>
+                <div className="question">
+                    <p>{basicQuestions[index].body}</p>
+                </div>
                 {basicQuestions[index].type === "MultipleChoice" && <MultipleChoice index= {index} options={basicQuestions[index].options}/>}
                 {basicQuestions[index].type === "Slider" && <Slider/>}
                 {basicQuestions[index].type === "Dropdown" && <Dropdown/>}

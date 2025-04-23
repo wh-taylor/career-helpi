@@ -7,27 +7,23 @@ interface DetailedQuizProps {
     setPage: (newPage: string) => void
 }
 
-type QuestionType = "MultipleChoice" | "Slider";
-
 interface Question {
     id: number;
     name: string;
     body: string;
-    options: string[];
-    type: QuestionType;
     answered: boolean;
 }
 
 const detailedQuestions: Question[] = [
-    {id: 1, name: "Question 1", body: "What is your preferred situation?", options: ["", ""], type: "MultipleChoice", answered: false},
-    {id: 2, name: "Question 2", body: "Rate how you feel working on this:", options: ["", ""], type: "Slider", answered: false},
-    {id: 3, name: "Question 3", body: "You like working in a team", options: ["True", "False"], type: "MultipleChoice", answered: false}
+    {id: 1, name: "Question 1", body: "Describe a perfect day in your life?", answered: false},
+    {id: 2, name: "Question 2", body: "What are some non-negotiables for your career?", answered: false},
+    {id: 3, name: "Question 3", body: "What are you passionate about? What do you get most excited for?", answered: false}
 ];
 
 export function DetailedQuiz({setPage}: DetailedQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [submitted, setSubmitted] = useState<boolean>(false);
-    const [textInput, setInputValue] = useState<string>('Begin typing here...');
+    const [answers, setAnswers] = useState<Record<number, string>>({});
 
     const handleNext = () => {
         if (index < detailedQuestions.length - 1) {
@@ -45,10 +41,18 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
     };
     
     const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setInputValue(event.target.value);
+        const value = event.target.value;
+        setAnswers({...answers, [question.id]: value});
+
+        if (value.trim() !== '') {
+            detailedQuestions[index].answered = true;
+        } else{
+            detailedQuestions[index].answered = false;
+        }
     }
 
-    const progress = submitted ? 100 : ((index+1) / detailedQuestions.length) * 100;
+    const numAnswered = detailedQuestions.filter(question => question.answered).length;
+    const progress = submitted ? 100 : (numAnswered / detailedQuestions.length) * 100;
     const question = detailedQuestions[index];
 
     return (
@@ -61,10 +65,16 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
                 </Button>
             </div>
             <div className="content">
-                <p>{question.body}</p>
+                <div className="question">
+                    <p>{question.body}</p>
+                </div>
             </div>
             <div>
-                <textarea className='text-input' value={textInput} onChange={handleInput} />
+                <textarea 
+                    className='text-input' 
+                    placeholder="Begin typing here..." 
+                    value={answers[question.id] || ''}
+                    onChange={handleInput} />
             </div>
             <div className="progressbarcontainer">
                 <ProgressBar now={progress} className="custom-progressbar" variant="danger" label={<img className="progress-label"src={rocketImg} alt=""/>}/>

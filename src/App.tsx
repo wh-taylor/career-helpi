@@ -5,6 +5,7 @@ import HomePage from './pages/Home/HomePage';
 import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
 import ResultsPage from './pages/ResultsPage/ResultsPage';
+import earthImg from './earth.png';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -31,6 +32,33 @@ function App() {
     setKey(event.target.value);
   }
 
+  const APIBody = {
+    "model": "gpt-4.1-nano",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write one sentence about a frog."
+      }
+    ],
+    "max_tokens": 10
+  }
+
+  async function callOpenAiAPI() {
+    console.log("Calling the OpenAI API")
+    await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + keyData
+      },
+      body: JSON.stringify(APIBody)
+    }).then((data) => {
+      return data.json();
+    }).then((data) => {
+      console.log(data);
+    });
+  }
+
   return (
     <div className="App">
       <div className="MainWrapper">
@@ -38,9 +66,10 @@ function App() {
         <header className="App-header">
           <div className="HeaderContent">
             <div className="HeaderSide left">
-              <div className="moon-container">
+              <div className="home-container">
                 {page !== "HomePage" && (
-                  <Button className="overlay-button" onClick={() => setPage("HomePage")}>
+                  <Button className="home-button" onClick={() => setPage("HomePage")}>
+                    <img src={earthImg} alt="Earth" className="earth-icon"/>
                     Home
                   </Button>
                 )}
@@ -60,7 +89,9 @@ function App() {
           {page === "ResultsPage" && <ResultsPage setPage={setPage}/>}
         </div>
         <footer className="footer">
-          <p>Scroll below to insert API key</p>
+          {page === "HomePage" &&
+            (<p>Scroll below to insert API key</p>)
+          }
         </footer>
       </div>
       <div className="api-form-container">
@@ -70,6 +101,7 @@ function App() {
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
             <br></br>
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+            <Button className="Submit-Button" onClick={callOpenAiAPI}>API test</Button>
           </Form>)
         }
       </div>
