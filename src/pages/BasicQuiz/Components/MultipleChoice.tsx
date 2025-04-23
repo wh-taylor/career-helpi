@@ -13,27 +13,18 @@ export function MultipleChoice({index, options}: MultipleChoiceProps) {
         setAnswer(event.target.value);
     }
     return (
-    <div className="answers">
-        <Form.Check 
-        type = "radio"
-        name = "answers"
-        onChange = {changeAnswer}
-        label = {options[0]}
-        value = {options[0]}
-        checked = {answer === "True"}
-        className="radioButtons"
-        />
-        <Form.Check 
-        type = "radio"
-        name = "answers"
-        onChange = {changeAnswer}
-        label = {options[1]}
-        value = {options[1]}
-        checked = {answer === "False"}
-        className="radioButtons"
-        />
-    </div>
-    )
+        <div className="answers">
+            {options.map((option) => (<Form.Check 
+                type = "radio"
+                name = "answers"
+                onChange = {changeAnswer}
+                label = {option}
+                value = {option}
+                checked = {answer === option}
+                className="radioButtons"
+            />))}
+        </div>
+    );
 }
 
 export default MultipleChoice;
