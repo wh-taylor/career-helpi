@@ -26,7 +26,8 @@ export function CareerCard({title, desc, reason}: CareerCardProps) {
             <div className="exploreButton">
                 <Button onClick={handleShow}>Explore</Button>
             </div>
-            <Modal show={show} onHide={handleClose} animation={false}>
+
+            <Modal classname="popup" show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
