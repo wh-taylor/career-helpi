@@ -46,7 +46,7 @@ const basicQuestions: Question[] = [
         "Focused, task-oriented pros who respect structure",
         "No team, thanks — I prefer solo work",
     ], type: "MultipleChoice"},
-    {id: 4, name: "Question 4", body: "How much structure do you prefer in your work?", options: [], type: "Slider"},
+    {id: 4, name: "Question 4", body: "How much structure do you prefer in your work?", options: ["No rules, full freedom", "Clear rules, detailed plans"], type: "Slider"},
     {id: 5, name: "Question 5", body: "You feel most fulfilled when…", options: [
         "You've made someone's day better",
         "You've solved a tricky challenge",
@@ -151,7 +151,7 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                     <p>{basicQuestions[index].body}</p>
                 </div>
                 {basicQuestions[index].type === "MultipleChoice" && <MultipleChoice index= {index} options={basicQuestions[index].options}/>}
-                {basicQuestions[index].type === "Slider" && <Slider/>}
+                {basicQuestions[index].type === "Slider" && <Slider index= {index} options={basicQuestions[index].options}/>}
                 {basicQuestions[index].type === "Dropdown" && <Dropdown/>}
                 {basicQuestions[index].type === "MultipleSelect" && <MultipleSelect index= {index} options={basicQuestions[index].options}/>}
             </div>
