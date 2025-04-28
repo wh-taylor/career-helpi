@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, ProgressBar } from "react-bootstrap";
 import './DetailedQuiz.css';
 import rocketImg from '../rocket.png';
-import { getApiKey } from '../../App'
-import { generateNewDetailedQuestion } from '../../openai'
+import { getApiKey, generateNewDetailedQuestion } from '../../openai'
 
 interface DetailedQuizProps {
     setPage: (newPage: string) => void
@@ -29,7 +28,7 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
               console.error("API key not found in localStorage.");
               return;
             }
-            const newQuestionText = await generateNewDetailedQuestion(keyData, questions);
+            const newQuestionText = await generateNewDetailedQuestion(questions);
       
             setQuestions(prev => [
               ...prev,

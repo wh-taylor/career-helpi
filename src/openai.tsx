@@ -1,5 +1,12 @@
 import { Question } from './pages/DetailedQuiz/DetailedQuiz';
 
+const API_KEY_STORAGE = "MYKEY"
+
+export function getApiKey(): string | null {
+  const storedKey = localStorage.getItem(API_KEY_STORAGE);
+  return storedKey ? JSON.parse(storedKey) : null;
+}
+
 const APIBody = {
     "model": "gpt-4.1-nano",
     "messages": [
@@ -27,7 +34,14 @@ const APIBody = {
     });
   }
 
-export async function generateNewDetailedQuestion(apiKey: string, prevQA: Question[]) {
+export async function generateNewDetailedQuestion(prevQA: Question[]) {
+  const keyData = getApiKey();
+
+  if (!keyData) {
+    console.error("API key not found in localStorage.");
+    return "API key not found.";
+  }
+
   const prompt = `
     You are a creative and intelligent assistant. Based on the following previous questions, generate a NEW detailed and engaging follow-up question.
 
@@ -55,7 +69,7 @@ export async function generateNewDetailedQuestion(apiKey: string, prevQA: Questi
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`
+        "Authorization": "Bearer" + {keyData}
       },
       body: JSON.stringify(requestBody)
     });
