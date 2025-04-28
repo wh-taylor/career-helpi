@@ -6,6 +6,7 @@ import Slider from "./Components/Slider";
 import Dropdown from "./Components/Dropdown";
 import rocketImg from '../rocket.png';
 import MultipleSelect from "./Components/MultipleSelect";
+import MultiSlider from "./Components/MultiSlider";
 
 
 interface BasicQuizProps {
@@ -23,7 +24,7 @@ interface Question {
 }
 
 const basicQuestions: Question[] = [
-    {id: 1, name: "Question 1", body: "What fills your tank? Rate how energizing each of these feels to you:", options: [
+    {id: 1, name: "Question 1", body: "Rate how energizing each of these feels to you out of 5:", options: [
         "Deep problem-solving",
         "Helping someone through a tough time",
         "Creating something from nothing",
@@ -154,6 +155,7 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                 {basicQuestions[index].type === "Slider" && <Slider index= {index} options={basicQuestions[index].options}/>}
                 {basicQuestions[index].type === "Dropdown" && <Dropdown/>}
                 {basicQuestions[index].type === "MultipleSelect" && <MultipleSelect index= {index} options={basicQuestions[index].options}/>}
+                {basicQuestions[index].type === "MultiSlider" && <MultiSlider index= {index} options={basicQuestions[index].options}/>}
             </div>
 
             <div className="progressbarcontainer">
