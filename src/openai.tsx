@@ -41,25 +41,28 @@ export async function generateNewDetailedQuestion(prevQA: Question[]) {
     console.error("API key not found in localStorage.");
     return "API key not found.";
   }
-
+  const prevQuestionSection = prevQA.length > 0 ?
+  `Previous Questions and Answers:\n${prevQA.map((q, idx) => `${idx + 1}. Q: ${q.question}\n   A: ${q.userAnswer}`).join("\n")}\n`
+  : `No previous questions have been asked yet.\n`
   const prompt = `
-    You are a creative and intelligent assistant. Based on the following previous questions, generate a NEW detailed and engaging follow-up question.
-
-    Previous Questions:
-    ${prevQA.map((q, idx) => `${idx + 1}. ${q.question}`).join("\n")}
+    ${prevQuestionSection}
+    You are helping a user thoughtfully explore career paths.
 
     Guidelines:
-    - The new question should build logically from what was asked before.
-    - It should be more detailed, specific, or advanced.
-    - Do NOT repeat previous questions.
-    - The question should invite a deeper or more thoughtful response.
-
-    Now, generate one new detailed follow-up question:
-    `;
+    - Generate one **open-ended** quiz question.
+    - It should encourage the user to reflect on their interests, strengths, values, or goals.
+    - It must NOT be a multiple-choice question.
+    - Make it inspiring, serious, and about career exploration.
+    - Avoid repeating or rephrasing earlier questions.
+    - Limit to 1-2 sentences (~15-30 words).
+  
+    Now, write one new detailed open-ended career-related question.
+  `.trim();
   const requestBody = {
     model: "gpt-4.1-nano",
     messages: [
-      { role: "system", content: "You are an expert at crafting engaging and detailed questions." },
+      { role: "system", content: `You are a career expert that is helping a someone determine what might be the best path for them. 
+        You are unbiased and consider a wide breadth of career options. ` },
       { role: "user", content: prompt.trim() }
     ],
     max_tokens: 150 
@@ -69,7 +72,7 @@ export async function generateNewDetailedQuestion(prevQA: Question[]) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer" + {keyData}
+        "Authorization": "Bearer " + keyData
       },
       body: JSON.stringify(requestBody)
     });

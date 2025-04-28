@@ -43,7 +43,11 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
         }
       
         initializeQuiz();
-      }, [questions.length]);
+      }, [questions]);
+
+    if (questions.length === 0) {
+        return <div>Loading question...</div>;  
+    }
 
     function handleNext() {
         if (index < questions.length - 1) {
