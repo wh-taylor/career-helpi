@@ -5,6 +5,7 @@ import MultipleChoice from "./Components/MultipleChoice";
 import Slider from "./Components/Slider";
 import Dropdown from "./Components/Dropdown";
 import rocketImg from '../rocket.png';
+import MultipleSelect from "./Components/MultipleSelect";
 
 
 interface BasicQuizProps {
@@ -152,6 +153,7 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                 {basicQuestions[index].type === "MultipleChoice" && <MultipleChoice index= {index} options={basicQuestions[index].options}/>}
                 {basicQuestions[index].type === "Slider" && <Slider/>}
                 {basicQuestions[index].type === "Dropdown" && <Dropdown/>}
+                {basicQuestions[index].type === "MultipleSelect" && <MultipleSelect index= {index} options={basicQuestions[index].options}/>}
             </div>
 
             <div className="progressbarcontainer">
