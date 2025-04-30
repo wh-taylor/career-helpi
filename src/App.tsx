@@ -78,6 +78,24 @@ function App() {
     });
     setStarElements([...stars]);
   }, []);
+  let rocketArray: Number[] = [];
+  for (let i = 0; i < 4; i++) {
+    rocketArray.push(i);
+  }
+  const [rocketElements, setRocketElements] = useState<JSX.Element[]>([]);
+  useEffect(() => {
+    const rockets = rocketArray.map((_, index) => {
+      const top = Math.random() * 65 + 20;
+      const animationDuration = Math.random() * 110 + 50;
+      const width = animationDuration - 20;
+      const height = animationDuration - 20;
+      const animationDelay = Math.random() * 20;
+      return (
+        <div key={index} className='Rocket' style={{top: `${top}%`, animationDuration: `${animationDuration}s`, animationDelay: `${animationDelay}s`}}><img src={rocketImg} style={{width: `${width}px`, height: `${height}px`}} alt='rocket'/></div>
+      );
+    });
+    setRocketElements([...rockets]);
+  }, []);
 
   return (
     <div className="App">
@@ -85,6 +103,7 @@ function App() {
       <div className="MainWrapper">
         <div>
           {starElements}
+          {rocketElements}
         </div>
         <div className="MainContent">
         <header className="App-header">
