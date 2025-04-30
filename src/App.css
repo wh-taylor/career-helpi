@@ -169,9 +169,11 @@
 }
 
 .api-form-container{
+  background-color: black;
   display: flex;
   justify-content: center; 
   align-items: center;
+  color: white;
 }
 
 .api-form{
