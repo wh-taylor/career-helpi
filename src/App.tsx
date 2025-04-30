@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Button, Form} from 'react-bootstrap';
 import HomePage from './pages/Home/HomePage';
@@ -6,6 +6,8 @@ import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
 import ResultsPage from './pages/ResultsPage/ResultsPage';
 import earthImg from './earth.png';
+import starImg from './star.png';
+import rocketImg from './pages/rocket.png';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -59,9 +61,31 @@ function App() {
     });
   }
 
+  let stararray: Number[] = [];
+  for (let i = 0; i < 100; i++) {
+    stararray.push(i);
+  }
+  const [starElements, setStarElements] = useState<JSX.Element[]>([]);
+  useEffect(() => {
+    const stars = stararray.map((_, index) => {
+      const top = Math.random() * 80 + 10;
+      const left = Math.random() * 99;
+      const animationDuration = Math.random() * 3 + 2;
+      const rotation = Math.random() * 360;
+      return (
+        <div key={index} className='star' style={{top: `${top}%`, left: `${left}%`, rotate: `${rotation}deg`}}><img src={starImg} style={{animationDuration: `${animationDuration}s`}} alt='star'/></div>
+      );
+    });
+    setStarElements([...stars]);
+  }, []);
+
   return (
     <div className="App">
+      
       <div className="MainWrapper">
+        <div>
+          {starElements}
+        </div>
         <div className="MainContent">
         <header className="App-header">
           <div className="HeaderContent">

@@ -10,6 +10,49 @@
   background-color: black;
 }
 
+.star {
+  width: 10px;
+  height: 10px;
+  top: 500px;
+  position: absolute;
+  z-index: 0;
+}
+
+.star img {
+  width: 6px;
+  height: 6px;
+  animation: twinkle 250s infinite;
+}
+
+@keyframes twinkle {
+  10% {opacity: 1; transform: scale(2.5);}
+  60% {opacity: 0.2; transform: scale(1);}
+  100% {opacity: 0.2;}
+}
+
+.Rocket {
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  top: 23%;
+  left: -10%;
+  animation: slide 150s linear infinite;
+}
+
+.Rocket img {
+  width: 30px;
+  height: 30px;
+  rotate: 90deg;
+}
+
+@keyframes slide {
+  
+  to{
+    left: 110%;
+  }
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -24,11 +67,15 @@
 .MainWrapper{
   display: flex;
   flex-direction: column;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .MainContent{
   flex: 1;
   min-height: 95vh;
+  z-index: 1;
 }
 
 .App-header {
