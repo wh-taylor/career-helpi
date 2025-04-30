@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (50 ms)
+  ✕ renders learn react link (120 ms)
 
   ● renders learn react link
 
@@ -18,150 +18,162 @@ FAIL src/App.test.tsx
           [36m<div[39m
             [33mclass[39m=[32m"MainWrapper"[39m
           [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"MainContent"[39m
-            [36m>[39m
-              [36m<header[39m
-                [33mclass[39m=[32m"App-header"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"HeaderContent"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"HeaderSide left"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"home-container"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"HeaderCenter"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"HeaderTitle"[39m
-                    [36m>[39m
-                      [0mThe Career Cosmos[0m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"HeaderSide right"[39m
-                  [36m/>[39m
-                [36m</div>[39m
-              [36m</header>[39m
+            [36m<div>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"main-container"[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 61.8989008697134%; left: 2.4093602450202107%;"[39m
               [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"quiz-container"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"tagline"[39m
-                  [36m>[39m
-                    [0mExplore the stars of possibility with The Career Cosmos...[0m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"quizzes"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"quiz-box"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"quiz-title"[39m
-                      [36m>[39m
-                        [0mBasic Quiz[0m
-                      [36m</div>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"quiz-description"[39m
-                      [36m>[39m
-                        [0mThis is the description for the Basic Quiz.[0m
-                      [36m</div>[39m
-                      [36m<img[39m
-                        [33malt[39m=[32m"red-planet"[39m
-                        [33mclass[39m=[32m"planet"[39m
-                        [33msrc[39m=[32m"planet1.png"[39m
-                      [36m/>[39m
-                      [36m<button[39m
-                        [33mclass[39m=[32m"quiz-button btn btn-primary"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<span>[39m
-                          [0mBasic Quiz[0m
-                        [36m</span>[39m
-                      [36m</button>[39m
-                    [36m</div>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"quiz-box"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"quiz-title"[39m
-                      [36m>[39m
-                        [0mDetailed Quiz[0m
-                      [36m</div>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"quiz-description"[39m
-                      [36m>[39m
-                        [0mThis is the description for the Detailed Quiz.[0m
-                      [36m</div>[39m
-                      [36m<img[39m
-                        [33malt[39m=[32m"blue-planet"[39m
-                        [33mclass[39m=[32m"planet"[39m
-                        [33msrc[39m=[32m"planet2.png"[39m
-                      [36m/>[39m
-                      [36m<button[39m
-                        [33mclass[39m=[32m"quiz-button btn btn-primary"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<span>[39m
-                          [0mDetailed Quiz[0m
-                        [36m</span>[39m
-                      [36m</button>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.996562972129292s;"[39m
+                [36m/>[39m
               [36m</div>[39m
-            [36m</div>[39m
-            [36m<footer[39m
-              [33mclass[39m=[32m"footer"[39m
-            [36m>[39m
-              [36m<p>[39m
-                [0mScroll below to insert API key[0m
-              [36m</p>[39m
-            [36m</footer>[39m
-          [36m</div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"api-form-container"[39m
-          [36m>[39m
-            [36m<form[39m
-              [33mclass[39m=[32m"api-form"[39m
-            [36m>[39m
-              [36m<label[39m
-                [33mclass[39m=[32m"form-label"[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 84.6453508131362%; left: 89.9034499409488%;"[39m
               [36m>[39m
-                [0mAPI Key:[0m
-              [36m</label>[39m
-              [36m<input[39m
-                [33mclass[39m=[32m"form-control"[39m
-                [33mplaceholder[39m=[32m"Insert API Key Here"[39m
-                [33mtype[39m=[32m"password"[39m
-              [36m/>[39m
-              [36m<br />[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.4940034661244614s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 28.96298054505296%; left: 79.2419748916425%;"[39m
               [36m>[39m
-                [0mSubmit[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.8353470737000084s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 88.56217866151613%; left: 26.620684812191456%;"[39m
               [36m>[39m
-                [0mAPI test[0m
-              [36m</button>[39m
-            [36m</form>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.1546764483363745s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 15.052023003208426%; left: 15.513173376431238%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.6228794042012336s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 88.77729932544126%; left: 41.89864014539826%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.9922287830570085s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 12.90534456258083%; left: 5.672817381756445%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.270437145077552s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 89.16792261395534%; left: 19.30352381321363%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.1804157458580695s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 49.06299229733173%; left: 41.76328310875569%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.249971983496753s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 44.20857002550022%; left: 4.877807018686933%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.978504581258022s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 64.49549398706786%; left: 21.516968069678953%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.634439494543598s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 67.04612077527389%; left: 63.28643222051147%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.662273501438545s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 69.2365987492475%; left: 2.269696200819675%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.3844464325105s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 34.164807231398925%; left: 84.1219983289411%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.301206821389519s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 59.01096918360173%; left: 13.379418901743952%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.458484682562219s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 30.86992349074043%; left: 79.63916340184892%;"[39m
+              [36m>[39m
+                [36m<img[...
 
        5 | test('renders learn react link', () => {
        6 |   render(<App />);
@@ -193,32 +205,32 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
---------------------------------|---------|----------|---------|---------|-------------------
-File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   11.22 |    21.15 |       5 |   11.82 |                   
- src                            |   28.57 |       55 |   11.11 |   28.57 |                   
-  App.tsx                       |   47.05 |    68.75 |   14.28 |   47.05 | 15,26-32,47-58,71 
-  index.tsx                     |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts            |       0 |        0 |       0 |       0 | 3-10              
- src/pages/BasicQuiz            |    12.5 |        0 |       0 |    12.5 |                   
-  BasicQuiz.tsx                 |    12.5 |        0 |       0 |    12.5 | 128-144           
- src/pages/BasicQuiz/Components |       0 |        0 |       0 |       0 |                   
-  Dropdown.tsx                  |       0 |      100 |       0 |       0 | 5                 
-  MultiSlider.tsx               |       0 |      100 |       0 |       0 | 11-23             
-  MultipleChoice.tsx            |       0 |      100 |       0 |       0 | 11-17             
-  MultipleSelect.tsx            |       0 |        0 |       0 |       0 | 11-24             
-  Slider.tsx                    |       0 |      100 |       0 |       0 | 11-28             
- src/pages/DetailedQuiz         |    4.34 |        0 |       0 |    4.54 |                   
-  DetailedQuiz.tsx              |    4.34 |        0 |       0 |    4.54 | 24-58             
- src/pages/Home                 |   33.33 |      100 |   33.33 |   33.33 |                   
-  HomePage.tsx                  |   33.33 |      100 |   33.33 |   33.33 | 24-34             
- src/pages/ResultsPage          |       0 |      100 |       0 |       0 |                   
-  CareerCard.tsx                |       0 |      100 |       0 |       0 | 11-14             
-  ResultsPage.tsx               |       0 |      100 |       0 |       0 | 15-29             
---------------------------------|---------|----------|---------|---------|-------------------
+--------------------------------|---------|----------|---------|---------|--------------------
+File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
+--------------------------------|---------|----------|---------|---------|--------------------
+All files                       |    30.4 |    21.15 |   13.63 |    30.5 |                    
+ src                            |   63.63 |       55 |   38.46 |   62.26 |                    
+  App.tsx                       |   79.54 |    68.75 |   45.45 |   78.57 | 17,28-34,49-60,116 
+  index.tsx                     |       0 |      100 |     100 |       0 | 7-19               
+  reportWebVitals.ts            |       0 |        0 |       0 |       0 | 3-10               
+ src/pages/BasicQuiz            |    12.5 |        0 |       0 |    12.5 |                    
+  BasicQuiz.tsx                 |    12.5 |        0 |       0 |    12.5 | 128-144            
+ src/pages/BasicQuiz/Components |       0 |        0 |       0 |       0 |                    
+  Dropdown.tsx                  |       0 |      100 |       0 |       0 | 5                  
+  MultiSlider.tsx               |       0 |      100 |       0 |       0 | 11-23              
+  MultipleChoice.tsx            |       0 |      100 |       0 |       0 | 11-17              
+  MultipleSelect.tsx            |       0 |        0 |       0 |       0 | 11-24              
+  Slider.tsx                    |       0 |      100 |       0 |       0 | 11-28              
+ src/pages/DetailedQuiz         |    4.34 |        0 |       0 |    4.54 |                    
+  DetailedQuiz.tsx              |    4.34 |        0 |       0 |    4.54 | 24-58              
+ src/pages/Home                 |   33.33 |      100 |   33.33 |   33.33 |                    
+  HomePage.tsx                  |   33.33 |      100 |   33.33 |   33.33 | 24-34              
+ src/pages/ResultsPage          |       0 |      100 |       0 |       0 |                    
+  CareerCard.tsx                |       0 |      100 |       0 |       0 | 11-14              
+  ResultsPage.tsx               |       0 |      100 |       0 |       0 | 15-29              
+--------------------------------|---------|----------|---------|---------|--------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.318 s
+Time:        3.291 s
 Ran all test suites.
