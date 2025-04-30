@@ -1,6 +1,10 @@
 .main-container{
     margin: 40px;
     max-height: 70vh;
+    color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 .return-button-box{
     text-align: left;

@@ -5,6 +5,8 @@ import MultipleChoice from "./Components/MultipleChoice";
 import Slider from "./Components/Slider";
 import Dropdown from "./Components/Dropdown";
 import rocketImg from '../rocket.png';
+import MultipleSelect from "./Components/MultipleSelect";
+import MultiSlider from "./Components/MultiSlider";
 
 
 interface BasicQuizProps {
@@ -22,7 +24,7 @@ interface Question {
 }
 
 const basicQuestions: Question[] = [
-    {id: 1, name: "Question 1", body: "What fills your tank? Rate how energizing each of these feels to you:", options: [
+    {id: 1, name: "Question 1", body: "Rate how energizing each of these feels to you out of 5:", options: [
         "Deep problem-solving",
         "Helping someone through a tough time",
         "Creating something from nothing",
@@ -45,7 +47,7 @@ const basicQuestions: Question[] = [
         "Focused, task-oriented pros who respect structure",
         "No team, thanks — I prefer solo work",
     ], type: "MultipleChoice"},
-    {id: 4, name: "Question 4", body: "How much structure do you prefer in your work?", options: [], type: "Slider"},
+    {id: 4, name: "Question 4", body: "How much structure do you prefer in your work?", options: ["No rules, full freedom", "Clear rules, detailed plans"], type: "Slider"},
     {id: 5, name: "Question 5", body: "You feel most fulfilled when…", options: [
         "You've made someone's day better",
         "You've solved a tricky challenge",
@@ -125,7 +127,7 @@ const basicQuestions: Question[] = [
 export function BasicQuiz({setPage}: BasicQuizProps) {
     const [index, setIndex] = useState<number>(0);
     return (
-        <div className="main-container">
+        <div className="basic-main-container">
             <h1 className="header">Basic Quiz</h1>
             <div className="topbuttons">
                 <Button className="btn btn-secondary" onClick={()=> {
@@ -145,13 +147,15 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                     {index === basicQuestions.length -1 ? "Submit" : "Next"}
                 </Button>
             </div>
-            <div className="content">
+            <div className="basiccontent">
                 <div className="question">
                     <p>{basicQuestions[index].body}</p>
                 </div>
                 {basicQuestions[index].type === "MultipleChoice" && <MultipleChoice index= {index} options={basicQuestions[index].options}/>}
-                {basicQuestions[index].type === "Slider" && <Slider/>}
+                {basicQuestions[index].type === "Slider" && <Slider index= {index} options={basicQuestions[index].options}/>}
                 {basicQuestions[index].type === "Dropdown" && <Dropdown/>}
+                {basicQuestions[index].type === "MultipleSelect" && <MultipleSelect index= {index} options={basicQuestions[index].options}/>}
+                {basicQuestions[index].type === "MultiSlider" && <MultiSlider index= {index} options={basicQuestions[index].options}/>}
             </div>
 
             <div className="progressbarcontainer">

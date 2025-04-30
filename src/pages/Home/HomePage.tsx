@@ -9,7 +9,7 @@ interface HomePageProps {
 
 export function HomePage({setPage}: HomePageProps) {
     return (
-        <div className="main-container">
+        <div className="home-main-container">
             <div className="quiz-container">
                 <div className="tagline">
                 Explore the stars of possibility with The Career Cosmos...

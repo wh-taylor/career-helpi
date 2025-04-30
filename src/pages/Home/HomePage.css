@@ -1,8 +1,10 @@
-.main-container {
+.home-main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 70vh;
   padding: 2rem;
+  color: white;
 }
 
 .quiz-container {

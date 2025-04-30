@@ -103,7 +103,7 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
     const question = questions[index];
 
     return (
-        <div className="main-container">
+        <div className="detailed-main-container">
             <h1 className="header">Detailed Quiz</h1>
             <div className="topbuttons">
                 <Button className="btn btn-secondary" onClick={handleBack}>Back</Button>
