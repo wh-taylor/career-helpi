@@ -19,43 +19,65 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [submitted, setSubmitted] = useState<boolean>(false);
     const [questions, setQuestions] = useState<Question[]>([]);
+    const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        async function initializeQuiz() {
-          if (questions.length === 0) {
-            const keyData = getApiKey();
-            if (!keyData) {
-              console.error("API key not found in localStorage.");
-              return;
-            }
-            const newQuestionText = await generateNewDetailedQuestion(questions);
-      
-            setQuestions(prev => [
-              ...prev,
-              {
+    const TOTAL_QUESTIONS = 10;
+
+    async function generateAndAddNewQuestion() {
+        const keyData = getApiKey();
+        if (!keyData) {
+            console.error("API key not found in localStorage.");
+            return;
+        }
+        setLoading(true);
+        const newQuestionText = await generateNewDetailedQuestion(questions);
+        setQuestions(prev => [
+            ...prev,
+            {
                 id: prev.length + 1,
                 question: newQuestionText,
                 userAnswer: "",
                 answered: false
-              }
-            ]);
-          }
-        }
-      
-        initializeQuiz();
-      }, [questions]);
-
-    if (questions.length === 0) {
-        return <div>Loading question...</div>;  
+            }
+        ]);
+        setLoading(false);
     }
 
-    function handleNext() {
+    useEffect(() => {
+        if (questions.length === 0) {
+            generateAndAddNewQuestion();
+        }
+    }, []);
+
+    async function handleNext() {
         if (index < questions.length - 1) {
-            setIndex(index + 1);
+            setIndex(prev => prev + 1);
+        } else if (questions.length < TOTAL_QUESTIONS) {
+            setLoading(true);
+            const keyData = getApiKey();
+            if (!keyData) {
+                console.error("API key not found in localStorage.");
+                return;
+            }
+            const newQuestionText = await generateNewDetailedQuestion(questions);
+            setQuestions(prev => {
+                const updated = [
+                    ...prev,
+                    {
+                        id: prev.length + 1,
+                        question: newQuestionText,
+                        userAnswer: "",
+                        answered: false
+                    }
+                ];
+                setIndex(updated.length - 1);  
+                return updated;
+            });
+            setLoading(false);
         } else {
             setSubmitted(true);
             setPage("ResultsPage");
-        };
+        }
     }
 
     function handleBack() {
@@ -72,8 +94,12 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
         );
     }
 
+    if (questions.length === 0 || loading) {
+        return <div>Loading question...</div>;
+    }
+
     const numAnswered = questions.filter(question => question.answered).length;
-    const progress = submitted ? 100 : (numAnswered / questions.length) * 100;
+    const progress = submitted ? 100 : (numAnswered / TOTAL_QUESTIONS) * 100;
     const question = questions[index];
 
     return (
