@@ -108,7 +108,7 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
             <div className="topbuttons">
                 <Button className="btn btn-secondary" onClick={handleBack}>Back</Button>
                 <Button onClick={handleNext} disabled={!question.answered}>
-                    {index === questions.length - 1 ? "Submit" : "Next"}
+                    {index === TOTAL_QUESTIONS - 1 ? "Submit" : "Next"}
                 </Button>
             </div>
             <div className="content">

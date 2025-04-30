@@ -48,16 +48,17 @@ export async function generateNewDetailedQuestion(prevQA: Question[]) {
     ${prevQuestionSection}
     You are helping a user thoughtfully explore career paths.
 
-    Guidelines:
-    - Generate one **open-ended** quiz question.
-    - It should encourage the user to reflect on their interests, strengths, values, or goals.
-    - It must NOT be a multiple-choice question.
-    - Make it inspiring, serious, and about career exploration.
-    - Avoid repeating or rephrasing earlier questions.
-    - Limit to 1-2 sentences (~15-30 words).
-  
-    Now, write one new detailed open-ended career-related question.
-  `.trim();
+    Your task:
+    - Generate ONE open-ended, serious, and reflective question about the user's goals, values, strengths, or interests.
+    - The question must be **significantly different in focus** from any of the previous ones.
+    - It should **not overlap in topic** with earlier questions. Avoid the same phrasing, ideas, or themes.
+    - You may explore different angles, such as creative passions, work environments, impact, identity, motivations, or experiences.
+    - Do NOT use multiple choice or list-based questions.
+    - Limit to 1–2 sentences (~15–30 words).
+    - Make it meaningful and inspiring—suitable for deep reflection on career direction.
+
+    Now, write ONE new detailed and **distinct** open-ended question.
+`.trim();
   const requestBody = {
     model: "gpt-4.1-nano",
     messages: [
