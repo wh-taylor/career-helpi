@@ -1,79 +1,126 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, ProgressBar } from "react-bootstrap";
 import './DetailedQuiz.css';
 import rocketImg from '../rocket.png';
+import { getApiKey, generateNewDetailedQuestion } from '../../openai'
 
 interface DetailedQuizProps {
     setPage: (newPage: string) => void
 }
 
-interface Question {
+export interface Question {
     id: number;
-    name: string;
-    body: string;
+    question: string;
+    userAnswer: string;
     answered: boolean;
 }
-
-const detailedQuestions: Question[] = [
-    {id: 1, name: "Question 1", body: "Describe a perfect day in your life?", answered: false},
-    {id: 2, name: "Question 2", body: "What are some non-negotiables for your career?", answered: false},
-    {id: 3, name: "Question 3", body: "What are you passionate about? What do you get most excited for?", answered: false}
-];
 
 export function DetailedQuiz({setPage}: DetailedQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [submitted, setSubmitted] = useState<boolean>(false);
-    const [answers, setAnswers] = useState<Record<number, string>>({});
+    const [questions, setQuestions] = useState<Question[]>([]);
+    const [loading, setLoading] = useState(false);
 
-    const handleNext = () => {
-        if (index < detailedQuestions.length - 1) {
-            setIndex(index + 1);
+    const TOTAL_QUESTIONS = 10;
+
+    async function generateAndAddNewQuestion() {
+        const keyData = getApiKey();
+        if (!keyData) {
+            console.error("API key not found in localStorage.");
+            return;
+        }
+        setLoading(true);
+        const newQuestionText = await generateNewDetailedQuestion(questions);
+        setQuestions(prev => [
+            ...prev,
+            {
+                id: prev.length + 1,
+                question: newQuestionText,
+                userAnswer: "",
+                answered: false
+            }
+        ]);
+        setLoading(false);
+    }
+
+    useEffect(() => {
+        if (questions.length === 0) {
+            generateAndAddNewQuestion();
+        }
+    }, []);
+
+    async function handleNext() {
+        if (index < questions.length - 1) {
+            setIndex(prev => prev + 1);
+        } else if (questions.length < TOTAL_QUESTIONS) {
+            setLoading(true);
+            const keyData = getApiKey();
+            if (!keyData) {
+                console.error("API key not found in localStorage.");
+                return;
+            }
+            const newQuestionText = await generateNewDetailedQuestion(questions);
+            setQuestions(prev => {
+                const updated = [
+                    ...prev,
+                    {
+                        id: prev.length + 1,
+                        question: newQuestionText,
+                        userAnswer: "",
+                        answered: false
+                    }
+                ];
+                setIndex(updated.length - 1);  
+                return updated;
+            });
+            setLoading(false);
         } else {
             setSubmitted(true);
             setPage("ResultsPage");
-        };
+        }
     }
 
-    const handleBack = () => {
+    function handleBack() {
         if (index > 0) {
             setIndex(index - 1);
         }
     };
     
-    const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    function handleInput(event: React.ChangeEvent<HTMLTextAreaElement>) {
         const value = event.target.value;
-        setAnswers({...answers, [question.id]: value});
-
-        if (value.trim() !== '') {
-            detailedQuestions[index].answered = true;
-        } else{
-            detailedQuestions[index].answered = false;
-        }
+        setQuestions(prev => prev.map((question, idx) =>
+            idx === index ? {...question, userAnswer: value, answered: value.trim() !==""} : question
+            )
+        );
     }
 
-    const numAnswered = detailedQuestions.filter(question => question.answered).length;
-    const progress = submitted ? 100 : (numAnswered / detailedQuestions.length) * 100;
-    const question = detailedQuestions[index];
+    if (questions.length === 0 || loading) {
+        return <div>Loading question...</div>;
+    }
+
+    const numAnswered = questions.filter(question => question.answered).length;
+    const progress = submitted ? 100 : (numAnswered / TOTAL_QUESTIONS) * 100;
+    const question = questions[index];
 
     return (
         <div className="detailed-main-container">
             <h1 className="header">Detailed Quiz</h1>
             <div className="topbuttons">
                 <Button className="btn btn-secondary" onClick={handleBack}>Back</Button>
-                <Button onClick={handleNext}>
-                    {index === detailedQuestions.length - 1 ? "Submit" : "Next"}
+                <Button onClick={handleNext} disabled={!question.answered}>
+                    {index === questions.length - 1 ? "Submit" : "Next"}
                 </Button>
             </div>
             <div className="content">
                 <div className="question">
-                    <p>{question.body}</p>
+                    <p>{question.question}</p>
                 </div>
             </div>
             <div>
                 <textarea 
                     className='text-input' 
                     placeholder="Begin typing here..." 
-                    value={answers[question.id] || ''}
+                    value={question.userAnswer}
                     onChange={handleInput} />
             </div>
             <div className="progressbarcontainer">

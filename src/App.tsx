@@ -17,12 +17,10 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-
-
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
   const [page, setPage] = useState<string>("HomePage");
-  
+
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
