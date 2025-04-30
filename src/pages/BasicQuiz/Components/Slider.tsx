@@ -15,7 +15,7 @@ export function Slider({index, options}: SliderProps) {
     };
 
     return(
-        <div className="answers">
+        <div className="slider-answers">
             <Form.Range 
                 className="slider"
                 min={1}

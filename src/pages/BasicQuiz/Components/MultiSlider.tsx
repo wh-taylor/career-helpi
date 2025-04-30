@@ -19,7 +19,7 @@ export function MultiSlider({index, options}: MultiSliderProps) {
     }
 
     return(
-        <div className="answers">
+        <div className="slider-answers">
             {options.map((x, i) => <>
                 <p>{x}</p>
                 <Form.Range 

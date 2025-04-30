@@ -1,9 +1,8 @@
-.main-container{
+.basic-main-container{
     padding:10px;
     height: 80vh;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 
 .return-button-box{
@@ -32,32 +31,39 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 5px;
 }
 
 .topbuttons Button {
     height: 40px;
 }
 
-.content {
+.basiccontent {
     width: 100%;
-    text-align: center;
-    padding: 40px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
     color: white;
+    overflow: scroll;
 }
 
-.content .question {
+.basiccontent .question {
     background-color: #000;
     /* margin: 0px 50px; */
-    margin: 0px auto;
-    width: 80%;
+    width: 100%;
+    margin-bottom: 1vh;
+    height: 15%;
     padding: 10px 0px;
     border-radius: 10px;
     border-style: solid;
     border-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.content .question p {
+.basiccontent .question p {
     margin: 0px;
 }
 

@@ -1,17 +1,16 @@
-.answers {
+.slider-answers {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
 .slider {
-    width: 75%;
+    width: 70vh;
 }
 
 .numberOptions {
     display: flex;
-    width: 75%;
+    width: 70vh;
     justify-content: space-between;
     color: white;
 }
