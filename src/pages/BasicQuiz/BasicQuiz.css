@@ -2,6 +2,7 @@
     padding:10px;
     height: 80vh;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -38,7 +39,7 @@
 }
 
 .basiccontent {
-    width: 100%;
+    width: 80%;
     height: 80%;
     display: flex;
     justify-content: center;

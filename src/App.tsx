@@ -61,12 +61,13 @@ function App() {
     });
   }
 
-  let stararray: Number[] = [];
-  for (let i = 0; i < 100; i++) {
-    stararray.push(i);
-  }
+  
   const [starElements, setStarElements] = useState<JSX.Element[]>([]);
   useEffect(() => {
+    let stararray: Number[] = [];
+    for (let i = 0; i < 100; i++) {
+      stararray.push(i);
+    }
     const stars = stararray.map((_, index) => {
       const top = Math.random() * 80 + 10;
       const left = Math.random() * 99;
@@ -78,12 +79,13 @@ function App() {
     });
     setStarElements([...stars]);
   }, []);
-  let rocketArray: Number[] = [];
-  for (let i = 0; i < 4; i++) {
-    rocketArray.push(i);
-  }
+  
   const [rocketElements, setRocketElements] = useState<JSX.Element[]>([]);
   useEffect(() => {
+    let rocketArray: Number[] = [];
+    for (let i = 0; i < 5; i++) {
+      rocketArray.push(i);
+    }
     const rockets = rocketArray.map((_, index) => {
       const top = Math.random() * 65 + 20;
       const animationDuration = Math.random() * 110 + 50;
