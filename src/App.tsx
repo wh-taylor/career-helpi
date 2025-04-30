@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Button, Form} from 'react-bootstrap';
 import HomePage from './pages/Home/HomePage';
@@ -6,6 +6,8 @@ import BasicQuiz from './pages/BasicQuiz/BasicQuiz';
 import DetailedQuiz from './pages/DetailedQuiz/DetailedQuiz';
 import ResultsPage from './pages/ResultsPage/ResultsPage';
 import earthImg from './earth.png';
+import starImg from './star.png';
+import rocketImg from './pages/rocket.png';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -59,9 +61,52 @@ function App() {
     });
   }
 
+  
+  const [starElements, setStarElements] = useState<JSX.Element[]>([]);
+  useEffect(() => {
+    let stararray: Number[] = [];
+    for (let i = 0; i < 100; i++) {
+      stararray.push(i);
+    }
+    const stars = stararray.map((_, index) => {
+      const top = Math.random() * 80 + 10;
+      const left = Math.random() * 99;
+      const animationDuration = Math.random() * 3 + 2;
+      const rotation = Math.random() * 360;
+      return (
+        <div key={index} className='star' style={{top: `${top}%`, left: `${left}%`, rotate: `${rotation}deg`}}><img src={starImg} style={{animationDuration: `${animationDuration}s`}} alt='star'/></div>
+      );
+    });
+    setStarElements([...stars]);
+  }, []);
+  
+  const [rocketElements, setRocketElements] = useState<JSX.Element[]>([]);
+  useEffect(() => {
+    let rocketArray: Number[] = [];
+    for (let i = 0; i < 5; i++) {
+      rocketArray.push(i);
+    }
+    const rockets = rocketArray.map((_, index) => {
+      const top = Math.random() * 65 + 20;
+      const animationDuration = Math.random() * 110 + 50;
+      const width = animationDuration - 20;
+      const height = animationDuration - 20;
+      const animationDelay = Math.random() * 20;
+      return (
+        <div key={index} className='Rocket' style={{top: `${top}%`, animationDuration: `${animationDuration}s`, animationDelay: `${animationDelay}s`}}><img src={rocketImg} style={{width: `${width}px`, height: `${height}px`}} alt='rocket'/></div>
+      );
+    });
+    setRocketElements([...rockets]);
+  }, []);
+
   return (
     <div className="App">
+      
       <div className="MainWrapper">
+        <div>
+          {starElements}
+          {rocketElements}
+        </div>
         <div className="MainContent">
         <header className="App-header">
           <div className="HeaderContent">

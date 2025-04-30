@@ -127,7 +127,7 @@ const basicQuestions: Question[] = [
 export function BasicQuiz({setPage}: BasicQuizProps) {
     const [index, setIndex] = useState<number>(0);
     return (
-        <div className="main-container">
+        <div className="basic-main-container">
             <h1 className="header">Basic Quiz</h1>
             <div className="topbuttons">
                 <Button className="btn btn-secondary" onClick={()=> {
@@ -147,7 +147,7 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                     {index === basicQuestions.length -1 ? "Submit" : "Next"}
                 </Button>
             </div>
-            <div className="content">
+            <div className="basiccontent">
                 <div className="question">
                     <p>{basicQuestions[index].body}</p>
                 </div>
