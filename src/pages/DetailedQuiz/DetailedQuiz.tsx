@@ -47,7 +47,7 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
         if (questions.length === 0) {
             generateAndAddNewQuestion();
         }
-    }, []);
+    });
 
     async function handleNext() {
         if (index < questions.length - 1) {
