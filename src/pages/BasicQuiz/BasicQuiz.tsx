@@ -16,7 +16,7 @@ interface BasicQuizProps {
 type QuestionType = "MultipleChoice" | "Slider" | "Dropdown" | "MultiSlider" | "MultipleSelect";
 export type Response = string | string[] | number | number[] | null;
 
-interface Question {
+interface BasicQuestion {
     id: number;
     name: string;
     body: string;
@@ -25,7 +25,7 @@ interface Question {
     answer: Response;
 }
 
-const basicQuestions: Question[] = [
+const basicQuestions: BasicQuestion[] = [
     {id: 1, name: "Question 1", body: "Rate how energizing each of these feels to you out of 5:", options: [
         "Deep problem-solving",
         "Helping someone through a tough time",
@@ -128,7 +128,7 @@ const basicQuestions: Question[] = [
 
 export function BasicQuiz({setPage}: BasicQuizProps) {
     const [index, setIndex] = useState<number>(0);
-    const [questions, setQuestions] = useState<Question[]>(basicQuestions);
+    const [questions, setQuestions] = useState<BasicQuestion[]>(basicQuestions);
 
     function updateResponse(answer: Response) {
         setQuestions(questions.map((question, i) =>
