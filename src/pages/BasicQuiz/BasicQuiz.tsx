@@ -14,6 +14,7 @@ interface BasicQuizProps {
 }
 
 type QuestionType = "MultipleChoice" | "Slider" | "Dropdown" | "MultiSlider" | "MultipleSelect";
+export type Response = string | string[] | number | number[] | null;
 
 interface Question {
     id: number;
@@ -21,7 +22,7 @@ interface Question {
     body: string;
     options: string[];
     type: QuestionType;
-    answer: string | string[] | number | number[] | null;
+    answer: Response;
 }
 
 const basicQuestions: Question[] = [
@@ -127,6 +128,14 @@ const basicQuestions: Question[] = [
 
 export function BasicQuiz({setPage}: BasicQuizProps) {
     const [index, setIndex] = useState<number>(0);
+    const [questions, setQuestions] = useState<Question[]>(basicQuestions);
+
+    function updateResponse(answer: Response) {
+        setQuestions(questions.map((question, i) =>
+            index === i ? {...question, answer: answer} : question
+        ));
+    }
+
     return (
         <div className="basic-main-container">
             <h1 className="header">Basic Quiz</h1>
@@ -139,28 +148,28 @@ export function BasicQuiz({setPage}: BasicQuizProps) {
                     Back
                 </Button>
                 <Button onClick={()=> {
-                    if (index < basicQuestions.length-1) {
+                    if (index < questions.length-1) {
                         setIndex(index + 1);
                     } else{
                         setPage("ResultsPage")
                     }
                 }}>
-                    {index === basicQuestions.length -1 ? "Submit" : "Next"}
+                    {index === questions.length -1 ? "Submit" : "Next"}
                 </Button>
             </div>
             <div className="basiccontent">
                 <div className="question">
-                    <p>{basicQuestions[index].body}</p>
+                    <p>{questions[index].body}</p>
                 </div>
-                {basicQuestions[index].type === "MultipleChoice" && <MultipleChoice index= {index} options={basicQuestions[index].options}/>}
-                {basicQuestions[index].type === "Slider" && <Slider index= {index} options={basicQuestions[index].options}/>}
-                {basicQuestions[index].type === "Dropdown" && <Dropdown/>}
-                {basicQuestions[index].type === "MultipleSelect" && <MultipleSelect index= {index} options={basicQuestions[index].options}/>}
-                {basicQuestions[index].type === "MultiSlider" && <MultiSlider index= {index} options={basicQuestions[index].options}/>}
+                {questions[index].type === "MultipleChoice" && <MultipleChoice index= {index} options={questions[index].options} onAnswer={updateResponse} />}
+                {questions[index].type === "Slider" && <Slider index={index} options={questions[index].options} onAnswer={updateResponse} />}
+                {questions[index].type === "Dropdown" && <Dropdown/>}
+                {questions[index].type === "MultipleSelect" && <MultipleSelect index= {index} options={questions[index].options} onAnswer={updateResponse} />}
+                {questions[index].type === "MultiSlider" && <MultiSlider index= {index} options={questions[index].options} onAnswer={updateResponse} />}
             </div>
 
             <div className="progressbarcontainer">
-                <ProgressBar now={(index / basicQuestions.length)*100} className="custom-progressbar" variant="danger" label={<img className="progress-label"src={rocketImg} alt=""/>}/>
+                <ProgressBar now={(index / questions.length)*100} className="custom-progressbar" variant="danger" label={<img className="progress-label"src={rocketImg} alt=""/>}/>
             </div>
 
         </div>
