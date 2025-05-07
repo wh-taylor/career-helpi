@@ -34,7 +34,7 @@ export async function generateNewDetailedQuestion(prevQA: DetailedQuestion[]) {
     Now, write ONE new detailed and **distinct** open-ended question.
 `.trim();
   const requestBody = {
-    model: "gpt-4.1",
+    model: "gpt-4o",
     messages: [
       { role: "system", content: 
       `You are a thoughtful and creative career coach helping a user reflect on their values, goals, and life experiences in order to explore fulfilling career paths.
