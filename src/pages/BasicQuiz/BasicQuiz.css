@@ -46,7 +46,6 @@
     flex-wrap: wrap;
     padding: 5px;
     color: white;
-    overflow: scroll;
 }
 
 .basiccontent .question {
