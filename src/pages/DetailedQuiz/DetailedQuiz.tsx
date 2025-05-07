@@ -20,10 +20,11 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
     const [submitted, setSubmitted] = useState<boolean>(false);
     const [questions, setQuestions] = useState<DetailedQuestion[]>([]);
     const [loading, setLoading] = useState(false);
+    const [firstQuestionAdded, setFirstQuestionAdded] = useState(false);
 
-    const TOTAL_QUESTIONS = 10;
+    const TOTAL_QUESTIONS = 7;
 
-    async function generateAndAddNewQuestion(currentQuestions: Question[]) {
+    async function generateAndAddNewQuestion(currentQuestions: DetailedQuestion[]) {
         const newQuestionText = await generateNewDetailedQuestion(currentQuestions);
     
         if (currentQuestions.some(q => q.question === newQuestionText)) {
@@ -43,33 +44,32 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
     }
 
     useEffect(() => {
-        if (questions.length === 0) {
-            setQuestions(prev => [
-                ...prev,
-                {
-                    id: prev.length + 1,
-                    question: "What activities or moments in your life have made you feel most authentic and energized, and how might those experiences guide your future professional journey?",
-                    userAnswer: "",
-                    answered: false
-                }
-            ])
+        if (!firstQuestionAdded) {
+            setQuestions([{
+                id: 1,
+                question: "What activities or moments in your life have made you feel most authentic and energized, and how might those experiences guide your future professional journey?",
+                userAnswer: "",
+                answered: false
+            }]);
+            setFirstQuestionAdded(true);
         }
-    });
+    }, [firstQuestionAdded]);
 
     async function handleNext() {
         if (index < questions.length - 1) {
             setIndex(prev => prev + 1);
-        } else if (questions.length < TOTAL_QUESTIONS) {
+        } else if (questions.length < TOTAL_QUESTIONS && firstQuestionAdded) {
             setLoading(true);
             const keyData = getApiKey();
             if (!keyData) {
                 console.error("API key not found in localStorage.");
+                setLoading(false);
                 return;
             }
-            await generateAndAddNewQuestion([...questions]);
+            await generateAndAddNewQuestion(questions);
             setLoading(false);
             setIndex(prev => prev + 1); 
-        } else {
+        } else if (questions.length === TOTAL_QUESTIONS) {
             setSubmitted(true);
             setPage("ResultsPage");
         }
