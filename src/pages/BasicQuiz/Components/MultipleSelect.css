@@ -1,24 +1,29 @@
 .answers {
     display: flex;
     flex-direction: column;
-    font-size: 2vh;
+    font-size: large;
     background-color: rgba(0, 0, 0, 0.8);
-    height:fit-content;
     padding: 4px;
     border-radius: 10px;
     border-style: solid;
     border-color: white;
+    margin: 10px;
+}
+
+.checkButtons {
+    margin: 10px 15px;
 }
 
 .checkButtons input[type="checkbox"] {
     transform: scale(1.5);
-    /* margin: 10px; */
+    margin-right: 20px;
     accent-color: #fff;
 }
 
 .checkButtons label {
     display: flex;
-    align-items: center;
-    gap: 5px; /* spacing between radio and label */
-    font-size: 1.4rem; /* increase label size too if needed */
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 1.4rem;
+    margin-top: -5px;
 }
