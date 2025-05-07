@@ -1,17 +1,20 @@
 import { Form } from 'react-bootstrap';
 import './Slider.css';
 import { useState } from 'react';
+import { Response } from '../BasicQuiz';
 
 interface SliderProps {
     index: number;
     options: string[];
+    onAnswer: (answer: Response) => void;
 }
 
-export function Slider({index, options}: SliderProps) {
+export function Slider({index, options, onAnswer}: SliderProps) {
     const [rating, setRating] = useState<number>(3);
 
     function changeRating(event: React.ChangeEvent<HTMLInputElement>) {
         setRating(parseInt(event.target.value));
+        onAnswer(rating);
     };
 
     return(

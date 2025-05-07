@@ -8,7 +8,7 @@ interface DetailedQuizProps {
     setPage: (newPage: string) => void
 }
 
-export interface Question {
+export interface DetailedQuestion {
     id: number;
     question: string;
     userAnswer: string;
@@ -18,7 +18,7 @@ export interface Question {
 export function DetailedQuiz({setPage}: DetailedQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [submitted, setSubmitted] = useState<boolean>(false);
-    const [questions, setQuestions] = useState<Question[]>([]);
+    const [questions, setQuestions] = useState<DetailedQuestion[]>([]);
     const [loading, setLoading] = useState(false);
 
     const TOTAL_QUESTIONS = 10;
@@ -54,7 +54,7 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
                 }
             ])
         }
-    }, []);
+    });
 
     async function handleNext() {
         if (index < questions.length - 1) {

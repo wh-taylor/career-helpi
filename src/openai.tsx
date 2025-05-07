@@ -1,4 +1,4 @@
-import { Question } from './pages/DetailedQuiz/DetailedQuiz';
+import { DetailedQuestion } from './pages/DetailedQuiz/DetailedQuiz';
 
 const API_KEY_STORAGE = "MYKEY"
 
