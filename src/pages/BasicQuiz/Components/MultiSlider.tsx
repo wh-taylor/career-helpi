@@ -1,13 +1,15 @@
 import { Form } from 'react-bootstrap';
 import './Slider.css';
 import { useState } from 'react';
+import { Response } from '../BasicQuiz';
 
 interface MultiSliderProps {
     index: number;
     options: string[];
+    onAnswer: (answer: Response) => void;
 }
 
-export function MultiSlider({index, options}: MultiSliderProps) {
+export function MultiSlider({index, options, onAnswer}: MultiSliderProps) {
     const [ratings, setRatings] = useState<number[]>(Array<number>(5).fill(3));
 
     function changeRating(i: number) {
@@ -15,6 +17,7 @@ export function MultiSlider({index, options}: MultiSliderProps) {
             let updatedRatings = [...ratings];
             updatedRatings[i] = parseInt(event.target.value);
             setRatings(updatedRatings);
+            onAnswer(ratings);
         };
     }
 
