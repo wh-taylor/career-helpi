@@ -1,5 +1,5 @@
 import { Form } from 'react-bootstrap';
-import './MultipleChoice.css';
+import './MultipleSelect.css';
 import { useState } from 'react';
 import { Response } from '../BasicQuiz';
 
@@ -33,7 +33,7 @@ export function MultipleSelect({index, options, onAnswer}: MultipleSelectProps) 
                 label = {option}
                 value = {option}
                 checked = {answers.includes(option)}
-                className="radioButtons"
+                className="checkButtons"
             />))}
         </div>
     );
