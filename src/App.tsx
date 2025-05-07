@@ -144,7 +144,6 @@ function App() {
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
             <br></br>
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-            <Button className="Submit-Button" onClick={callOpenAiAPI}>API test</Button>
           </Form>)
         }
       </div>

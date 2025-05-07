@@ -98,10 +98,19 @@
     right: 0;
   }
 
-  .planet {
-    width: 250px;   
-    height: 250px;  
-    position: center;
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
-    animation: float 4s ease-in-out infinite;
-  }
+.planet {
+  width: 250px;   
+  height: 250px;  
+  position: center;
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
+  animation: float 4s ease-in-out infinite;
+}
+
+.api_warning {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%); 
+  width: auto;
+  z-index: 9999;
+}
