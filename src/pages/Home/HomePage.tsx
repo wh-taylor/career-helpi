@@ -28,11 +28,7 @@ export function HomePage({setPage}: HomePageProps) {
         <div>
             {showAlert && (
                 <div className="api_warning">
-                    <Alert
-                        variant="warning"
-                        onClose={() => setShowAlert(false)}
-                        dismissible
-                    >
+                    <Alert variant="warning" onClose={() => setShowAlert(false)} dismissible>
                         No API key found. Submit one again at the bottom of the page.
                     </Alert>
                 </div>
@@ -47,22 +43,25 @@ export function HomePage({setPage}: HomePageProps) {
                     <div className="quiz-box">
                         <div className="quiz-title">Basic Quiz</div>
                         <div className="quiz-description">
-                        This is the description for the Basic Quiz.
+                        Looking for a quick way to explore your interests? 
+                        This multiple-choice quiz gives you a fast snapshot of career paths that might be a good fit
+                        —no rocket science required.
                         </div>
-                        <img src={planet1Img} alt="red-planet" className="planet" />
                         <Button className="quiz-button" onClick={() => handleQuizClick("BasicQuiz")}>
                         <span>Basic Quiz</span>
                         </Button>
+                        <img src={planet1Img} alt="red-planet" className="planet" />
                     </div>
                     <div className="quiz-box">
                         <div className="quiz-title">Detailed Quiz</div>
                         <div className="quiz-description">
-                        This is the description for the Detailed Quiz.
+                        Want something more personalized? This quiz gives you space to reflect and write about your goals, values, 
+                        and passions—perfect for anyone ready to dig deeper.
                         </div>
-                        <img src={planet2Img} alt="blue-planet" className="planet" />
                         <Button className="quiz-button" onClick={() => handleQuizClick("DetailedQuiz")}>
                         <span>Detailed Quiz</span>
                         </Button>
+                        <img src={planet2Img} alt="blue-planet" className="planet" />
                     </div>
                 </div>
             </div>
