@@ -1,5 +1,5 @@
 import { Form } from 'react-bootstrap';
-import './Slider.css';
+import './MultiSlider.css';
 import { useState } from 'react';
 import { Response } from '../BasicQuiz';
 
@@ -23,8 +23,9 @@ export function MultiSlider({index, options, onAnswer}: MultiSliderProps) {
 
     return(
         <div className="slider-answers">
-            {options.map((x, i) => <>
+            {options.map((x, i) => <div className="slider-answer">
                 <p>{x}</p>
+                <p>1</p>
                 <Form.Range 
                     className="slider"
                     min={1}
@@ -33,11 +34,8 @@ export function MultiSlider({index, options, onAnswer}: MultiSliderProps) {
                     value={ratings[i]}
                     onChange={changeRating(i)}
                 />
-                <div className="numberOptions">
-                    <p>1</p>
-                    <p>5</p>
-                </div>
-            </>)}
+                <p>5</p>
+            </div>)}
         </div>
     )
 }
