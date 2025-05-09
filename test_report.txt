@@ -21,159 +21,159 @@ FAIL src/App.test.tsx
             [36m<div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 69.68743308976147%; left: 32.28053593038963%;"[39m
+                [33mstyle[39m=[32m"top: 72.72160775252944%; left: 52.768091895784785%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 4.157931685866988s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.1635737915735476s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 60.47703850189572%; left: 85.81629274010731%;"[39m
+                [33mstyle[39m=[32m"top: 28.855398149931446%; left: 84.93380715852328%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 3.1182770026104096s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.440681892962761s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 31.25146426218274%; left: 73.0811153831959%;"[39m
+                [33mstyle[39m=[32m"top: 83.93643166148141%; left: 77.69831931573688%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 3.5316091100064577s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.479851711449751s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 42.144652590195534%; left: 83.13396040456506%;"[39m
+                [33mstyle[39m=[32m"top: 47.23538957272352%; left: 62.26984900354338%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 2.6769089241076554s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.863874656869185s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 53.44112866325588%; left: 76.91456281093585%;"[39m
+                [33mstyle[39m=[32m"top: 69.1615945808205%; left: 87.77890927093607%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 4.237673622196883s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.218064505966243s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 75.54949596701192%; left: 4.896691629524071%;"[39m
+                [33mstyle[39m=[32m"top: 40.63708730021123%; left: 41.632438496294206%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 2.0438884033339466s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.183122549239749s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 50.90589771242925%; left: 1.4092228116576662%;"[39m
+                [33mstyle[39m=[32m"top: 62.07173209099521%; left: 33.34329125313961%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 2.5145223140425643s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.4980514712180524s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 11.458705952168629%; left: 32.19837355963187%;"[39m
+                [33mstyle[39m=[32m"top: 41.33122990337172%; left: 65.36816818800048%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 2.833403849451383s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.692965802537724s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 33.03176313947395%; left: 38.55857022701786%;"[39m
+                [33mstyle[39m=[32m"top: 64.51601117025606%; left: 49.47971938897831%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 4.532004575370905s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.4533744927396555s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 46.57566092839693%; left: 11.196441969165631%;"[39m
+                [33mstyle[39m=[32m"top: 26.01484351418888%; left: 84.04875475056014%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 4.75765830649936s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.153956960980379s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 59.69334896378142%; left: 23.812561017665924%;"[39m
+                [33mstyle[39m=[32m"top: 77.20328731305642%; left: 10.31901152061673%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 2.3407366567068997s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.4594577641554434s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 43.07252787214685%; left: 20.639210911980584%;"[39m
+                [33mstyle[39m=[32m"top: 65.48646033140288%; left: 62.460894027303446%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 4.5193036344458415s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.719775308072053s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 38.117137993482885%; left: 2.505166309857212%;"[39m
+                [33mstyle[39m=[32m"top: 84.04790291299504%; left: 8.928303227516153%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 3.899305101809949s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.0778434129094867s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 58.40399383749654%; left: 51.26294942688716%;"[39m
+                [33mstyle[39m=[32m"top: 72.6053884883678%; left: 57.65441029830939%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 3.1363573650500376s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.429718310832953s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 69.42306821899992%; left: 30.48645594250334%;"[39m
+                [33mstyle[39m=[32m"top: 53.967737753124894%; left: 5.296423096133559%;"[39m
               [36m>[39m
                 [36m<img[39m
                   [33malt[39m=[32m"star"[39m
                   [33msrc[39m=[32m"star.png"[39m
-                  [33mstyle[39m=[32m"animation-duration: 2.5461259611051803s;"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.2196542868541105s;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"star"[39m
-                [33mstyle[39m=[32m"top: 45.67235402273024%; left: 59.61343669924518%;"[39m
+                [33mstyle[39m=[32m"top: 86.97185189797479%; left: 83.40219130081938%;"[39m
               [36m>[39m
-                [...
+                [36m<i...
 
        5 | test('renders learn react link', () => {
        6 |   render(<App />);
@@ -233,5 +233,5 @@ All files                       |   21.83 |    14.47 |   10.52 |   22.22 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.281 s
+Time:        3.289 s
 Ran all test suites.
