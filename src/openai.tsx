@@ -1,4 +1,4 @@
-import { Question } from './pages/DetailedQuiz/DetailedQuiz';
+import { DetailedQuestion } from './pages/DetailedQuiz/DetailedQuiz';
 
 const API_KEY_STORAGE = "MYKEY"
 
@@ -7,34 +7,7 @@ export function getApiKey(): string | null {
   return storedKey ? JSON.parse(storedKey) : null;
 }
 
-const APIBody = {
-    "model": "gpt-4.1-nano",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Write one sentence about a frog."
-      }
-    ],
-    "max_tokens": 10
-  }
-
-  async function callOpenAiAPI(keyData: string, prompt: string) {
-    console.log("Calling the OpenAI API")
-    await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + keyData
-      },
-      body: JSON.stringify(APIBody)
-    }).then((data) => {
-      return data.json();
-    }).then((data) => {
-      console.log(data);
-    });
-  }
-
-export async function generateNewDetailedQuestion(prevQA: Question[]) {
+export async function generateNewDetailedQuestion(prevQA: DetailedQuestion[]) {
   const keyData = getApiKey();
 
   if (!keyData) {
@@ -49,21 +22,33 @@ export async function generateNewDetailedQuestion(prevQA: Question[]) {
     You are helping a user thoughtfully explore career paths.
 
     Your task:
-    - Generate ONE open-ended, serious, and reflective question about the user's goals, values, strengths, or interests.
+    - Generate ONE open-ended, thoughtful question that helps the user reflect, plan, imagine, or clarify their career direction...
     - The question must be **significantly different in focus** from any of the previous ones.
     - It should **not overlap in topic** with earlier questions. Avoid the same phrasing, ideas, or themes.
-    - You may explore different angles, such as creative passions, work environments, impact, identity, motivations, or experiences.
+    - Vary your approach across different lenses: practical planning, personal growth, creative vision, values-based dilemmas, future impact, or day-to-day work preferences.
     - Do NOT use multiple choice or list-based questions.
     - Limit to 1–2 sentences (~15–30 words).
-    - Make it meaningful and inspiring—suitable for deep reflection on career direction.
+    - Avoid questions that simply reword previous themes or use vague phrases like "passions," "dreams," or "identity" if already covered.
+    - Include concrete context where possible (e.g., daily decisions, past experiences, imagined futures).
 
     Now, write ONE new detailed and **distinct** open-ended question.
 `.trim();
   const requestBody = {
-    model: "gpt-4.1-nano",
+    model: "gpt-4o",
     messages: [
-      { role: "system", content: `You are a career expert that is helping a someone determine what might be the best path for them. 
-        You are unbiased and consider a wide breadth of career options. ` },
+      { role: "system", content: 
+      `You are a thoughtful and creative career coach helping a user reflect on their values, goals, and life experiences in order to explore fulfilling career paths.
+
+      Your job is to ask a single open-ended, thought-provoking question at a time. Each question should invite deep reflection but also remain concrete, practical, or grounded in real decisions, not abstract or repetitive.
+
+      You must:
+      - Avoid repeating themes, language, or structure from previous questions.
+      - Vary the tone and focus of your questions (e.g., self-reflection, hypothetical scenarios, ethical tradeoffs, work style preferences, long-term planning, personal values).
+      - Consider a wide breadth of professional and personal influences (not just job titles).
+      - Ask ONE clear, concise question that fits naturally in a conversation and encourages meaningful insight.
+
+      Stay flexible, creative, and insightful with every question.
+      `.trim() },
       { role: "user", content: prompt.trim() }
     ],
     max_tokens: 150 
