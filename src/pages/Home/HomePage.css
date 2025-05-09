@@ -19,7 +19,7 @@
 }
 
 .tagline {
-  font-size: 1.8rem;
+  font-size: 2rem;
   height: 5vh;
   font-weight: bold;
   color: white;
@@ -54,7 +54,8 @@
    margin-bottom: 16px;
    font-size: 20px;
    text-align: center;
-   padding: 2rem;
+   padding: 1rem;
+   width: 35vw;
    background: rgba(0, 0, 0, 0.5);
    backdrop-filter: blur(3px);
 }
@@ -65,14 +66,16 @@
     text-align: center;
     font-weight: 500;
     color: white;
+    padding-top: 5rem;
 }
 
 .quiz-button{
-    margin-top: auto;
+    margin-top: 10rem;
     align-self: center;
     font-size: 25px;
     width: 250px;
     height: 60px;
+    z-index: 2;
 }
 
 .homeImgBtn{
