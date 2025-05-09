@@ -87,3 +87,53 @@ export async function generateNewDetailedQuestion(prevQA: Question[]) {
     return "Sorry, I couldn't generate a new detailed question.";
   }
 }
+
+export async function generateQuizResults(answeredQuestions: Question[]) {
+  const keyData = getApiKey();
+
+  if (!keyData) {
+    console.error("API key not found in localStorage.");
+    return "API key not found.";
+  }
+  const answeredQuestionInput = `Previous Questions and Answers:\n${answeredQuestions.map((q, idx) => `${idx + 1}. Q: ${q.question}\n   A: ${q.userAnswer}`).join("\n")}\n`
+  
+  const prompt = `
+    ${answeredQuestionInput}
+    You are helping a user thoughtfully explore career paths.
+
+    Your task:
+    - Generate FIVE specific career paths names in an array that the quiz taker can pursue based off of their answers on the quiz.
+    - The career paths must be **significantly different in focus** from any of the previous ones.
+    - Limit to 4 words for each path name.
+    - Make it meaningful and inspiring—suitable for deep reflection on career direction.
+
+`.trim();
+const requestBody = {
+  model: "gpt-4.1-nano",
+  messages: [
+    { role: "system", content: `You are a career expert that is helping someone determine what might be the best path for them. 
+      You are unbiased and consider a wide breadth of career options. ` },
+    { role: "user", content: prompt.trim() }
+  ],
+  max_tokens: 150 
+};
+try {
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + keyData
+    },
+    body: JSON.stringify(requestBody)
+  });
+
+  const data = await response.json();
+  console.log(data);
+  //const newQuestion = data.choices?.[0]?.message?.content?.trim();
+
+  //return newQuestion || "Sorry, no new question was generated.";
+} catch (error) {
+  console.error("Error generating detailed question:", error);
+  return "Sorry, I couldn't generate a new detailed question.";
+}
+}

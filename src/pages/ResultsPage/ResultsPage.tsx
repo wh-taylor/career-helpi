@@ -1,5 +1,6 @@
 import { CareerCard } from "./CareerCard";
 import './ResultsPage.css';
+import { getApiKey, generateNewDetailedQuestion } from '../../openai';
 
 interface ResultsPageProps {
     setPage: (newPage: string) => void

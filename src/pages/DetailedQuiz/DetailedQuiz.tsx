@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, ProgressBar } from "react-bootstrap";
 import './DetailedQuiz.css';
 import rocketImg from '../rocket.png';
-import { getApiKey, generateNewDetailedQuestion } from '../../openai'
+import { getApiKey, generateNewDetailedQuestion, generateQuizResults } from '../../openai'
 
 interface DetailedQuizProps {
     setPage: (newPage: string) => void
@@ -77,6 +77,7 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
         } else {
             setSubmitted(true);
             setPage("ResultsPage");
+            generateQuizResults(questions);
         }
     }
 
