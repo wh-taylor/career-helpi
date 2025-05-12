@@ -76,6 +76,10 @@
     color: #999;
 }
 
+.exploreButton {
+    margin-top: auto;
+}
+
 .modal-content {
     background-color: black;
     color: white;

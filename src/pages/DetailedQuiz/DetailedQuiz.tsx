@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button, ProgressBar } from "react-bootstrap";
+import { QuizResult } from "../../App";
 import './DetailedQuiz.css';
 import rocketImg from '../rocket.png';
 import { getApiKey, generateNewDetailedQuestion, generateQuizResults } from '../../openai'
 
 interface DetailedQuizProps {
-    setPage: (newPage: string) => void
+    setPage: (newPage: string) => void;
+    setQuizResults: (newQuizResults: QuizResult[]) => void;
 }
 
 export interface DetailedQuestion {
@@ -15,14 +17,14 @@ export interface DetailedQuestion {
     answered: boolean;
 }
 
-export function DetailedQuiz({setPage}: DetailedQuizProps) {
+export function DetailedQuiz({setPage, setQuizResults}: DetailedQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [submitted, setSubmitted] = useState<boolean>(false);
     const [questions, setQuestions] = useState<DetailedQuestion[]>([]);
     const [loading, setLoading] = useState(false);
     const [firstQuestionAdded, setFirstQuestionAdded] = useState(false);
 
-    const TOTAL_QUESTIONS = 7;
+    const TOTAL_QUESTIONS = 2;
 
     async function generateAndAddNewQuestion(currentQuestions: DetailedQuestion[]) {
         const newQuestionText = await generateNewDetailedQuestion(currentQuestions);
@@ -71,8 +73,11 @@ export function DetailedQuiz({setPage}: DetailedQuizProps) {
             setIndex(prev => prev + 1); 
         } else if (questions.length === TOTAL_QUESTIONS) {
             setSubmitted(true);
+
             setPage("ResultsPage");
-            generateQuizResults(questions);
+            const results = await generateQuizResults(questions);
+            
+            setQuizResults(results);
         }
     }
 
