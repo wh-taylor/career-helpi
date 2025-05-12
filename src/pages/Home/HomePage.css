@@ -75,24 +75,21 @@
   width: 100%;
 }
 
+.quiz-button{
+  margin-top: 10rem;
+  align-self: center;
+  font-size: 35px;
+  width: 270px;
+  height: 65px;
+  z-index: 2;
+}
+
 .quiz-button1{
-    margin-top: 10rem;
-    align-self: center;
-    font-size: 35px;
-    width: 270px;
-    height: 65px;
-    z-index: 2;
-    background-color: orange;
+  background-color: orange;
 }
 
 .quiz-button2{
-    margin-top: 10rem;
-    align-self: center;
-    font-size: 35px;
-    width: 270px;
-    height: 65px;
-    z-index: 2;
-    background-color: blue;
+  background-color: blue;
 }
 
 .homeImgBtn{
@@ -100,14 +97,14 @@
   height: 100px;
 }
 
-.quiz-button1 span {
+.quiz-button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
   
-.quiz-button1 span:after {
+.quiz-button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -116,11 +113,11 @@
     transition: 0.5s;
   }
   
-.quiz-button1:hover span {
+.quiz-button:hover span {
     padding-right: 25px;
   }
   
-.quiz-button1:hover span:after {
+.quiz-button:hover span:after {
     opacity: 1;
     right: 0;
   }
