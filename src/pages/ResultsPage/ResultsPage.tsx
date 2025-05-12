@@ -1,35 +1,29 @@
 import { CareerCard } from "./CareerCard";
+
+import { QuizResult } from "../../App";
 import './ResultsPage.css';
 
 interface ResultsPageProps {
-    setPage: (newPage: string) => void
+    setPage: (newPage: string) => void;
+    quizResults: QuizResult[];
 }
 
-interface Card {
-    title: string,
-    desc: string,
-    reason: string,
-}
 
-export function ResultsPage({setPage}: ResultsPageProps) {
-    let cards: Card[] = [
-        {title: "Job 1", desc: "Desc", reason: "Reason"},
-        {title: "Job 2", desc: "Desc", reason: "Reason"},
-        {title: "Job 3", desc: "Desc", reason: "Reason"},
-        {title: "Job 4", desc: "Desc", reason: "Reason"},
-        {title: "Job 5", desc: "Desc", reason: "Reason"},
-    ];
+export function ResultsPage({setPage, quizResults}: ResultsPageProps) {
 
     return (
         <div className="main-container">
             <h1 className="resultsHeader">Here are our top career choices for you:</h1>
             <hr/>
             <div className="careerCards">
-                {cards.map(({title, desc, reason}) =>
+                {quizResults.map((result, index) =>
+                    
                     <CareerCard
-                        title={title}
-                        desc={desc}
-                        reason={reason}/>
+                        title={result.title}
+                        desc={result.description}
+                        reason={result.reason}
+                        key={index}/>
+                    
                 )}
             </div>
         </div>

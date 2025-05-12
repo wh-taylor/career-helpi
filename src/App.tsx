@@ -9,6 +9,12 @@ import earthImg from './earth.png';
 import starImg from './star.png';
 import rocketImg from './pages/rocket.png';
 
+export interface QuizResult {
+    title: string;
+    description: string;
+    reason: string;
+}
+
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -20,6 +26,7 @@ if (prevKey !== null) {
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
   const [page, setPage] = useState<string>("HomePage");
+  const [quizResults, setQuizResults] = useState<QuizResult[]>([]);
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -126,10 +133,11 @@ function App() {
             <div className="HeaderSide right">{/* Optional right-side content */}</div>
           </div>
         </header>
+        
           {page === "HomePage" && <HomePage setPage={setPage}/>}
-          {page === "BasicQuiz" && <BasicQuiz setPage={setPage}/>}
-          {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage}/>}
-          {page === "ResultsPage" && <ResultsPage setPage={setPage}/>}
+          {page === "BasicQuiz" && <BasicQuiz setPage={setPage} setQuizResults={setQuizResults}/>}
+          {page === "DetailedQuiz" && <DetailedQuiz setPage={setPage} setQuizResults={setQuizResults}/>}
+          {page === "ResultsPage" && <ResultsPage setPage={setPage} quizResults={quizResults}/>}
         </div>
         <footer className="footer">
           {page === "HomePage" &&
