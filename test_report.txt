@@ -1,0 +1,237 @@
+
+> starter_helpi@0.1.0 test
+> react-scripts test --coverage
+
+FAIL src/App.test.tsx
+  ✕ renders learn react link (121 ms)
+
+  ● renders learn react link
+
+    TestingLibraryElementError: Unable to find an element with the text: /learn react/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"MainWrapper"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 54.487976307672966%; left: 94.6111049508965%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.497840650147419s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 57.2400422643029%; left: 31.030371940007132%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.886890599469672s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 59.04665058708892%; left: 65.52756505209419%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.08514017484633s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 77.07966640942601%; left: 85.9195962725017%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.545284465900644s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 33.59198204417421%; left: 14.601526991357195%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.0369710069114593s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 38.8077207755936%; left: 0.06097309093512959%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.873446820123888s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 24.913245770822297%; left: 28.083296386207184%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.70563417921518s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 12.956674070035596%; left: 35.57470260027091%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.384056664044971s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 87.48873696155309%; left: 25.287597376642434%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.683033307609027s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 50.790896701303865%; left: 0.6549368717732305%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.091973612612255s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 46.554577805658695%; left: 0.785026636556871%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.059755149155441s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 58.22136274594784%; left: 23.516911860173778%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.8751545043332003s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 64.78006973972164%; left: 48.21181245707633%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 3.4532926155543544s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 31.425892057048053%; left: 0.23920771499191162%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 2.277448532593162s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 67.85291828494246%; left: 73.15787478939681%;"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"star"[39m
+                  [33msrc[39m=[32m"star.png"[39m
+                  [33mstyle[39m=[32m"animation-duration: 4.50353306021815s;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"star"[39m
+                [33mstyle[39m=[32m"top: 57.25663482666704%; left: 18.218484272547347%;"[39m
+              [36m>[39m
+                [3...
+
+       5 | test('renders learn react link', () => {
+       6 |   render(<App />);
+    >  7 |   const linkElement = screen.getByText(/learn react/i);
+         |                              ^
+       8 |   expect(linkElement).toBeInTheDocument();
+       9 | });
+      10 |
+
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByText (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/App.test.tsx:7:30)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+--------------------------------|---------|----------|---------|---------|--------------------
+File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
+--------------------------------|---------|----------|---------|---------|--------------------
+All files                       |      20 |     14.1 |   10.16 |   20.32 |                    
+ src                            |   40.65 |    36.66 |   27.77 |   39.77 |                    
+  App.tsx                       |      80 |    68.75 |   45.45 |   79.06 | 23,33-39,54-65,121 
+  index.tsx                     |       0 |      100 |     100 |       0 | 7-19               
+  openai.tsx                    |    2.85 |        0 |       0 |    2.94 | 7-152              
+  reportWebVitals.ts            |       0 |        0 |       0 |       0 | 3-10               
+ src/pages/BasicQuiz            |    7.69 |        0 |       0 |    7.69 |                    
+  BasicQuiz.tsx                 |    7.69 |        0 |       0 |    7.69 | 133-161            
+ src/pages/BasicQuiz/Components |       0 |        0 |       0 |       0 |                    
+  Dropdown.tsx                  |       0 |      100 |       0 |       0 | 5                  
+  MultiSlider.tsx               |       0 |      100 |       0 |       0 | 13-26              
+  MultipleChoice.tsx            |       0 |      100 |       0 |       0 | 13-22              
+  MultipleSelect.tsx            |       0 |        0 |       0 |       0 | 13-29              
+  Slider.tsx                    |       0 |      100 |       0 |       0 | 13-31              
+ src/pages/DetailedQuiz         |       0 |        0 |       0 |       0 |                    
+  DetailedQuiz.tsx              |       0 |        0 |       0 |       0 | 21-106             
+ src/pages/Home                 |   33.33 |      100 |   33.33 |   33.33 |                    
+  HomePage.tsx                  |   33.33 |      100 |   33.33 |   33.33 | 24-34              
+ src/pages/ResultsPage          |       0 |      100 |       0 |       0 |                    
+  CareerCard.tsx                |       0 |      100 |       0 |       0 | 11-14              
+  ResultsPage.tsx               |       0 |      100 |       0 |       0 | 14-21              
+--------------------------------|---------|----------|---------|---------|--------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.279 s
+Ran all test suites.
