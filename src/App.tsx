@@ -58,7 +58,7 @@ function App() {
       stararray.push(i);
     }
     const stars = stararray.map((_, index) => {
-      const top = Math.random() * 80 + 10;
+      const top = Math.random() * 90;
       const left = Math.random() * 99;
       const animationDuration = Math.random() * 3 + 2;
       const rotation = Math.random() * 360;
