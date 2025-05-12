@@ -24,7 +24,7 @@ export function DetailedQuiz({setPage, setQuizResults}: DetailedQuizProps) {
     const [loading, setLoading] = useState(false);
     const [firstQuestionAdded, setFirstQuestionAdded] = useState(false);
 
-    const TOTAL_QUESTIONS = 2;
+    const TOTAL_QUESTIONS = 7;
 
     async function generateAndAddNewQuestion(currentQuestions: DetailedQuestion[]) {
         const newQuestionText = await generateNewDetailedQuestion(currentQuestions);

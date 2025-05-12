@@ -103,7 +103,7 @@ const requestBody = {
       You are unbiased and consider a wide breadth of career options. ` },
     { role: "user", content: prompt.trim() }
   ],
-  max_tokens: 250,
+  max_tokens: 400,
   functions: [
     {
       name: "get_results",
