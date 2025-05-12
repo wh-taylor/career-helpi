@@ -39,17 +39,6 @@ function App() {
     setKey(event.target.value);
   }
 
-  const APIBody = {
-    "model": "gpt-4.1-nano",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Write one sentence about a frog."
-      }
-    ],
-    "max_tokens": 10
-  }
-
   
   const [starElements, setStarElements] = useState<JSX.Element[]>([]);
   useEffect(() => {

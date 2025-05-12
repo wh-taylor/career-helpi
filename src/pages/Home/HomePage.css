@@ -25,7 +25,7 @@
   color: white;
   text-align: center;
   max-width: 100%;
-  padding-bottom: 8%;
+  padding-bottom: 6%;
 }
 
 .quizzes {
@@ -38,24 +38,31 @@
   flex-grow: 1;
   align-items: stretch;
   gap: 4rem;
+  padding-top: 2%;
 }
 
 .quiz-box {
   width: 45vw;
   min-height: 350px; 
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-.quiz-box-title-descrip{
+.quiz-box-title-descrip {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   padding: 1rem;
   height: 28vh;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.quiz-box:hover .quiz-box-title-descrip {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .quiz-description{
@@ -124,7 +131,28 @@
     right: 0;
   }
 
-  .planet {
+.planet-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes slowBounce {
+  0%   { transform: translateX(-50%) translateY(0); }
+  50%  { transform: translateX(-50%) translateY(-10px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.quiz-box:hover .planet {
+  animation: slowBounce 2s ease-in-out infinite;
+}
+
+.planet {
     position: absolute;
     bottom: -50vh; /* places planet inside the bottom edge */
     left: 50%;
@@ -135,7 +163,7 @@
     pointer-events: none;
     animation: float 4s ease-in-out infinite;
     filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
-  }
+}
 
 .api_warning {
   position: fixed;

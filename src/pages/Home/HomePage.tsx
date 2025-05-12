@@ -51,7 +51,9 @@ export function HomePage({setPage}: HomePageProps) {
                         <Button className="quiz-button quiz-button1" onClick={() => handleQuizClick("BasicQuiz")}>
                         <span>Basic Quiz</span>
                         </Button>
-                        <img src={planet1Img} alt="red-planet" className="planet" />
+                        <div className='planet-wrapper'>
+                            <img src={planet1Img} alt="red-planet" className="planet" />
+                        </div>
                     </div>
                     <div className="quiz-box">
                         <div className="quiz-box-title-descrip">
@@ -64,7 +66,9 @@ export function HomePage({setPage}: HomePageProps) {
                         <Button className="quiz-button quiz-button2" onClick={() => handleQuizClick("DetailedQuiz")}>
                         <span>Detailed Quiz</span>
                         </Button>
-                        <img src={planet2Img} alt="blue-planet" className="planet" />
+                        <div className='planet-wrapper'>
+                            <img src={planet2Img} alt="blue-planet" className="planet" />
+                        </div>
                     </div>
                 </div>
             </div>
