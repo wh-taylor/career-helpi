@@ -16,23 +16,21 @@ export function CareerCard({title, desc, reason}: CareerCardProps) {
             <div className="jobTitle">
                 {title}
             </div>
-            <div className="jobDesc">
-                {desc}
-            </div>
             <hr/>
             <div className="jobReason">
                 {reason}
             </div>
+            <hr/>
             <div className="exploreButton">
                 <Button onClick={handleShow}>Explore</Button>
             </div>
 
-            <Modal classname="popup" show={show} onHide={handleClose} animation={false}>
+            <Modal className="popup" show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Career Description</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    This is where the career description can go
+                    {desc}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={handleClose}>

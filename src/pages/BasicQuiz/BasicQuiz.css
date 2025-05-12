@@ -46,12 +46,10 @@
     flex-wrap: wrap;
     padding: 5px;
     color: white;
-    overflow: scroll;
 }
 
 .basiccontent .question {
     background-color: #000;
-    /* margin: 0px 50px; */
     width: 100%;
     margin-bottom: 1vh;
     height: 15%;
@@ -62,6 +60,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: x-large;
 }
 
 .basiccontent .question p {
