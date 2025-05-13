@@ -3,7 +3,8 @@ import { Button, ProgressBar } from "react-bootstrap";
 import { QuizResult } from "../../App";
 import './DetailedQuiz.css';
 import rocketImg from '../rocket.png';
-import { getApiKey, generateNewDetailedQuestion, generateQuizResults } from '../../openai'
+import { getApiKey, generateNewDetailedQuestion, generateQuizResults } from '../../openai';
+import { LoadingSpinner } from "../../App";
 
 interface DetailedQuizProps {
     setPage: (newPage: string) => void;
@@ -22,6 +23,7 @@ export function DetailedQuiz({setPage, setQuizResults}: DetailedQuizProps) {
     const [submitted, setSubmitted] = useState<boolean>(false);
     const [questions, setQuestions] = useState<DetailedQuestion[]>([]);
     const [loading, setLoading] = useState(false);
+    const [resultsLoading, setResultsLoading] = useState(false);
     const [firstQuestionAdded, setFirstQuestionAdded] = useState(false);
 
     const TOTAL_QUESTIONS = 2;
@@ -73,11 +75,13 @@ export function DetailedQuiz({setPage, setQuizResults}: DetailedQuizProps) {
             setIndex(prev => prev + 1); 
         } else if (questions.length === TOTAL_QUESTIONS) {
             setSubmitted(true);
+            setResultsLoading(true);
 
-            setPage("ResultsPage");
             const results = await generateQuizResults(questions);
-            
             setQuizResults(results);
+
+            setResultsLoading(false);
+            setPage("ResultsPage");
         }
     }
 
@@ -95,8 +99,12 @@ export function DetailedQuiz({setPage, setQuizResults}: DetailedQuizProps) {
         );
     }
 
-    if (questions.length === 0 || loading) {
-        return <div>Loading question...</div>;
+    if (questions.length === 0 ||loading) {
+        return <LoadingSpinner message="Generating your next question..." />;
+    }
+    
+    if (resultsLoading) {
+        return <LoadingSpinner message="Generating your results..." />;
     }
 
     const numAnswered = questions.filter(question => question.answered).length;

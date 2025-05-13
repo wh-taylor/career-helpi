@@ -115,7 +115,7 @@ export async function generateQuizResults(answeredQuestions: DetailedQuestion[] 
         content: prompt
       }
     ],
-    max_tokens: 100,
+    max_tokens: 1000,
     functions: [
       {
         name: "get_results",

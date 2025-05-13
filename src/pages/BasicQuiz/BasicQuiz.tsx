@@ -9,6 +9,7 @@ import MultipleSelect from "./Components/MultipleSelect";
 import MultiSlider from "./Components/MultiSlider";
 import { QuizResult } from "../../App";
 import { generateQuizResults } from "../../openai";
+import { LoadingSpinner } from "../../App";
 
 
 interface BasicQuizProps {
@@ -132,11 +133,16 @@ const basicQuestions: BasicQuestion[] = [
 export function BasicQuiz({setPage, setQuizResults}: BasicQuizProps) {
     const [index, setIndex] = useState<number>(0);
     const [questions, setQuestions] = useState<BasicQuestion[]>(basicQuestions);
+    const [resultsLoading, setResultsLoading] = useState(false);
 
     function updateResponse(userAnswer: Response) {
         setQuestions(questions.map((question, i) =>
             index === i ? {...question, userAnswer: userAnswer} : question
         ));
+    }
+
+    if (resultsLoading) {
+        return <LoadingSpinner message="Generating your results..." />;
     }
 
     return (
@@ -155,9 +161,9 @@ export function BasicQuiz({setPage, setQuizResults}: BasicQuizProps) {
                         setIndex(index + 1);
                     } else{
                         setPage("ResultsPage");
-
+                        setResultsLoading(true);
                         const results = await generateQuizResults(questions);
-                                    
+                        setResultsLoading(false);
                         setQuizResults(results);
 
                     }
