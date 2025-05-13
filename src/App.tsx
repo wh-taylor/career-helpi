@@ -8,11 +8,24 @@ import ResultsPage from './pages/ResultsPage/ResultsPage';
 import earthImg from './earth.png';
 import starImg from './star.png';
 import rocketImg from './pages/rocket.png';
+import Spinner from 'react-bootstrap/Spinner';
 
 export interface QuizResult {
-    title: string;
-    description: string;
-    reason: string;
+  title: string;
+  description: string;
+  reason: string;
+  salaryRange: string;
+  jobOutlook: string;
+  commonEmployers: string;
+}
+
+export function LoadingSpinner({ message = "Loading..." }: { message?: string }) {
+  return (
+    <div className="loading-container">
+      <Spinner animation="border" role="status" variant="info" />
+      <p>{message}</p>
+    </div>
+  );
 }
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)

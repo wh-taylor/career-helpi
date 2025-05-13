@@ -22,6 +22,9 @@ export function ResultsPage({setPage, quizResults}: ResultsPageProps) {
                         title={result.title}
                         desc={result.description}
                         reason={result.reason}
+                        salaryRange={result.salaryRange}
+                        jobOutlook={result.jobOutlook}
+                        commonEmployers={result.commonEmployers}
                         key={index}/>
                     
                 )}
