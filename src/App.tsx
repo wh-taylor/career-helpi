@@ -39,33 +39,6 @@ function App() {
     setKey(event.target.value);
   }
 
-  const APIBody = {
-    "model": "gpt-4.1-nano",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Write one sentence about a frog."
-      }
-    ],
-    "max_tokens": 10
-  }
-
-  async function callOpenAiAPI() {
-    console.log("Calling the OpenAI API")
-    await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + keyData
-      },
-      body: JSON.stringify(APIBody)
-    }).then((data) => {
-      return data.json();
-    }).then((data) => {
-      console.log(data);
-    });
-  }
-
   
   const [starElements, setStarElements] = useState<JSX.Element[]>([]);
   useEffect(() => {
@@ -74,7 +47,7 @@ function App() {
       stararray.push(i);
     }
     const stars = stararray.map((_, index) => {
-      const top = Math.random() * 80 + 10;
+      const top = Math.random() * 90;
       const left = Math.random() * 99;
       const animationDuration = Math.random() * 3 + 2;
       const rotation = Math.random() * 360;
@@ -152,7 +125,6 @@ function App() {
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
             <br></br>
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-            <Button className="Submit-Button" onClick={callOpenAiAPI}>API test</Button>
           </Form>)
         }
       </div>
