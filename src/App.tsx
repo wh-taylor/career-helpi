@@ -10,9 +10,12 @@ import starImg from './star.png';
 import rocketImg from './pages/rocket.png';
 
 export interface QuizResult {
-    title: string;
-    description: string;
-    reason: string;
+  title: string;
+  description: string;
+  reason: string;
+  salaryRange: string;
+  jobOutlook: string;
+  commonEmployers: string;
 }
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)

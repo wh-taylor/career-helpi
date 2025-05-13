@@ -81,74 +81,88 @@ export async function generateQuizResults(answeredQuestions: DetailedQuestion[] 
     console.error("API key not found in localStorage.");
     return ["API key not found."];
   }
+
   const answeredQuestionInput = `Previous Questions and Answers:\n${answeredQuestions.map((q, idx) => `${idx + 1}. Q: ${q.question}\n   A: ${q.userAnswer}`).join("\n")}\n`
-  
+
   const prompt = `
     ${answeredQuestionInput}
-    You are helping a user thoughtfully explore career paths.
+
+    You are helping a user thoughtfully explore career paths based on their quiz responses.
 
     Your task:
-    - Generate FIVE specific career paths names in an array of objects that the quiz taker can pursue based off of their answers on the quiz.
-    - Give each object a title of the career, description of the career, and a reason that the career would be good for the quiz taker.
-    - The career paths must be **significantly different in focus** from any of the previous ones.
-    - Limit to 4 words for each path name.
-    - Make it meaningful and inspiring—suitable for deep reflection on career direction.
-    - Return an array of objects with each record have three attributes: A title, a description, and a reasoning.
+    - Generate FIVE specific and distinct career paths the quiz taker might pursue.
+    - Each career should be significantly different in focus from the others.
+    - For each career, return the following:
+      - Title (max 4 words)
+      - A brief description of what the career involves
+      - A personalized reason this career would be a good fit for the quiz taker
+      - The typical salary range in the U.S. (in dollars per year)
+      - The projected job outlook (e.g., growing, stable, declining)
+      - Common employers or industries that hire for this role
 
-`.trim();
-const requestBody = {
-  model: "gpt-4.1-nano",
-  messages: [
-    { role: "system", content: `You are a career expert that is helping someone determine what might be the best path for them. 
-      You are unbiased and consider a wide breadth of career options. ` },
-    { role: "user", content: prompt.trim() }
-  ],
-  max_tokens: 400,
-  functions: [
-    {
-      name: "get_results",
-      description: "Returns a list of career results",
-      parameters: {
-        type: "object",
-        properties: {
-          careers: {
-            type: "array",
-            items: {
-              type: "object",
-              properties: {
-                title: { type: "string", description: "The title of the career"},
-                description: {type: "string", description: "The description of the career"},
-                reason: {type: "string", description: "The reasoning for the career"},
-              },
-              required: ["title", "description", "reason"],
-            },
-          },
-        },
-        required: ["careers"],
+    Output this information as an array of objects, one for each career.
+  `.trim();
+
+  const requestBody = {
+    model: "gpt-4o",
+    messages: [
+      {
+        role: "system",
+        content: `You are a career expert helping someone explore their future path based on quiz results. You provide thoughtful, data-informed insights across diverse fields.`
       },
-    },
-  ],
-  function_call: { name: "get_results" },
+      {
+        role: "user",
+        content: prompt
+      }
+    ],
+    max_tokens: 100,
+    functions: [
+      {
+        name: "get_results",
+        description: "Returns a list of detailed career results",
+        parameters: {
+          type: "object",
+          properties: {
+            careers: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  title: { type: "string", description: "The title of the career" },
+                  description: { type: "string", description: "The description of the career" },
+                  reason: { type: "string", description: "Why this career is a good fit for the user" },
+                  salaryRange: { type: "string", description: "Typical U.S. salary range (e.g. $60,000–$90,000)" },
+                  jobOutlook: { type: "string", description: "Future job outlook (e.g. growing, stable, declining)" },
+                  commonEmployers: { type: "string", description: "Common employers or industries hiring for this role" }
+                },
+                required: ["title", "description", "reason", "salaryRange", "jobOutlook", "commonEmployers"]
+              }
+            }
+          },
+          required: ["careers"]
+        }
+      }
+    ],
+    function_call: { name: "get_results" }
+  };
 
-};
-try {
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + keyData
-    },
-    body: JSON.stringify(requestBody)
-  });
+  try {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + keyData
+      },
+      body: JSON.stringify(requestBody)
+    });
 
-  const data = await response.json();
-  console.log(data);
-  console.log(JSON.parse(data.choices[0].message.function_call.arguments));
-  const results = await JSON.parse(data.choices[0].message.function_call.arguments).careers;
-  
-  return results;
-} catch (error) {
-  console.error("Error generating quiz results", error);
-  return ["Sorry, I couldn't generate the quiz results."];
-}
+    const data = await response.json();
+    console.log(data);
+    const results = JSON.parse(data.choices[0].message.function_call.arguments).careers;
+
+    return results;
+  } catch (error) {
+    console.error("Error generating quiz results", error);
+    return ["Sorry, I couldn't generate the quiz results."];
+  }
 }
